@@ -1,0 +1,85 @@
+openapi: 3.0.3
+info:
+  title: MotionElements Marketplace Account API
+  version: 2.0.0
+  description: MotionElements Marketplace API v2 lets you search, retrieve, license and download from the MotionElements library of 26M+ royalty-free stock video, music, sound effects, motion/editing templates (After Effects, Premiere Pro, Final Cut/Motion, DaVinci Resolve, .mogrt), photos, vectors, GIFs and Lottie animations. Authentication is HTTP Basic using your API secret key as the username (no password). All requests are over HTTPS. Harvested from the provider's published Postman collection (Marketplace API v2).
+  contact:
+    name: MotionElements Support
+    email: support@motionelements.com
+    url: https://www.motionelements.com/developer
+  termsOfService: https://www.motionelements.com/legal/license
+servers:
+- url: https://api.motionelements.com
+  description: Production
+security:
+- basicAuth: []
+tags:
+- name: Account
+  description: Authenticated account details.
+paths:
+  /v2/account:
+    get:
+      operationId: getAccount
+      summary: Get account details
+      tags:
+      - Account
+      description: Retrieve the authenticated account's details (subscription, credits, currency).
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+    patch:
+      operationId: updateAccount
+      summary: Update account details
+      tags:
+      - Account
+      description: Update mutable settings on the authenticated account.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication. Use your API secret key (created in the Developer Console) as the username; leave the password empty.
+externalDocs:
+  description: MotionElements API v2 documentation
+  url: https://api-docs.motionelements.com/

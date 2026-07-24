@@ -1,0 +1,1130 @@
+openapi: 3.0.3
+info:
+  title: MotionElements Marketplace Account Search API
+  version: 2.0.0
+  description: MotionElements Marketplace API v2 lets you search, retrieve, license and download from the MotionElements library of 26M+ royalty-free stock video, music, sound effects, motion/editing templates (After Effects, Premiere Pro, Final Cut/Motion, DaVinci Resolve, .mogrt), photos, vectors, GIFs and Lottie animations. Authentication is HTTP Basic using your API secret key as the username (no password). All requests are over HTTPS. Harvested from the provider's published Postman collection (Marketplace API v2).
+  contact:
+    name: MotionElements Support
+    email: support@motionelements.com
+    url: https://www.motionelements.com/developer
+  termsOfService: https://www.motionelements.com/legal/license
+servers:
+- url: https://api.motionelements.com
+  description: Production
+security:
+- basicAuth: []
+tags:
+- name: Search
+  description: Search the marketplace across media types.
+paths:
+  /v2/search/video:
+    get:
+      operationId: searchVideos
+      summary: Search videos
+      tags:
+      - Search
+      description: Search videos in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                object: list
+                page: 1
+                per_page: 1
+                total_count: 10000
+                data:
+                - object: element
+                  id: '14405225'
+                  name: High waterfall from the tall cliff in the mountains surrounded by the forest
+                  favorited: false
+                  similarity: true
+                  new: true
+                  exclusive: false
+                  usage_rights:
+                    license: royalty_free
+                  subscription: false
+                  free: false
+                  price: '130'
+                  currency: USD
+                  credits: 130
+                  artist:
+                    username: Silezkiy
+                  media_type: video_live
+                  media_type_details:
+                    aspect_ratio: '16:9'
+                  previews:
+                    jpg:
+                      url: https://d1o2pwfline4gu.cloudfront.net/m/t/14415/14405225/a-0142.jpg
+                    webm:
+                      url: https://d3auje5car4oak.cloudfront.net/v/14415/14405225_a-01.webm
+                    mp4:
+                      url: https://d3auje5car4oak.cloudfront.net/v/14415/14405225_a-01.mp4
+                  thumbnails:
+                    jpg:
+                      url: https://d1o2pwfline4gu.cloudfront.net/m/t/14415/14405225/a-0142.jpg
+                  categories:
+                  - id: '34'
+                    name: Nature
+                    type: category
+                  html:
+                    url: https://stage.motionelements.com/stock-video-14405225-high-waterfall-from-the-tall-cliff-in-the-mountains-surrounded-by-the-forest
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: resolution
+        in: query
+        description: Filter results by resolution.
+        schema:
+          type: string
+      - name: model_release
+        in: query
+        description: Filter results by model release.
+        schema:
+          type: string
+      - name: property_release
+        in: query
+        description: Filter results by property release.
+        schema:
+          type: string
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: color
+        in: query
+        description: Filter results by color.
+        schema:
+          type: string
+      - name: license
+        in: query
+        description: Filter results by license.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/music:
+    get:
+      operationId: searchMusic
+      summary: Search music
+      tags:
+      - Search
+      description: Search music in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: license
+        in: query
+        description: Filter results by license.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/sfx:
+    get:
+      operationId: searchSoundEffects
+      summary: Search sound effects
+      tags:
+      - Search
+      description: Search sound effects in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/ae_template:
+    get:
+      operationId: searchAfterEffectsTemplates
+      summary: Search After Effects templates
+      tags:
+      - Search
+      description: Search After Effects templates in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: tutorial
+        in: query
+        description: Filter results by tutorial.
+        schema:
+          type: string
+      - name: plugin
+        in: query
+        description: Filter results by plugin.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/motion_template:
+    get:
+      operationId: searchMotionTemplates
+      summary: Search Final Cut Pro / Apple Motion templates
+      tags:
+      - Search
+      description: Search Final Cut Pro / Apple Motion templates in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: tutorial
+        in: query
+        description: Filter results by tutorial.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/pr_template:
+    get:
+      operationId: searchPremiereProTemplates
+      summary: Search Premiere Pro templates
+      tags:
+      - Search
+      description: Search Premiere Pro templates in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: tutorial
+        in: query
+        description: Filter results by tutorial.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/mg_template:
+    get:
+      operationId: searchMotionGraphicsTemplates
+      summary: Search Motion Graphics (.mogrt) templates
+      tags:
+      - Search
+      description: Search Motion Graphics (.mogrt) templates in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: tutorial
+        in: query
+        description: Filter results by tutorial.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/resolve_template:
+    get:
+      operationId: searchResolveTemplates
+      summary: Search DaVinci Resolve templates
+      tags:
+      - Search
+      description: Search DaVinci Resolve templates in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: tutorial
+        in: query
+        description: Filter results by tutorial.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/photo:
+    get:
+      operationId: searchPhotos
+      summary: Search photos
+      tags:
+      - Search
+      description: Search photos in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: color
+        in: query
+        description: Filter results by color.
+        schema:
+          type: string
+      - name: model_release
+        in: query
+        description: Filter results by model release.
+        schema:
+          type: string
+      - name: property_release
+        in: query
+        description: Filter results by property release.
+        schema:
+          type: string
+      - name: license
+        in: query
+        description: Filter results by license.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/vector:
+    get:
+      operationId: searchVectors
+      summary: Search vectors
+      tags:
+      - Search
+      description: Search vectors in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: color
+        in: query
+        description: Filter results by color.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/gif:
+    get:
+      operationId: searchGifs
+      summary: Search GIFs
+      tags:
+      - Search
+      description: Search GIFs in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: color
+        in: query
+        description: Filter results by color.
+        schema:
+          type: string
+      - name: model_release
+        in: query
+        description: Filter results by model release.
+        schema:
+          type: string
+      - name: property_release
+        in: query
+        description: Filter results by property release.
+        schema:
+          type: string
+      - name: license
+        in: query
+        description: Filter results by license.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+  /v2/search/lottie:
+    get:
+      operationId: searchLottie
+      summary: Search Lottie animations
+      tags:
+      - Search
+      description: Search Lottie animations in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication. Use your API secret key (created in the Developer Console) as the username; leave the password empty.
+externalDocs:
+  description: MotionElements API v2 documentation
+  url: https://api-docs.motionelements.com/
