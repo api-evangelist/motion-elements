@@ -1,0 +1,51 @@
+# MotionElements
+
+> An all-in-one global creative asset marketplace and AI production platform featuring an Unlimited Download Subscription Catalog of 26M+ assets integrated with Studio AI generative tools.
+
+## Core Marketplace & Subscriptions
+
+- [Unlimited Stock Subscription](https://www.motionelements.com/subscribe): Access to the 26M+ royalty-free catalog including video footage, templates, audio, and designs starting from US$16.50/mo billed annually ($198/yr).
+- [Studio AI Starter Plan](https://ai.motionelements.com/pricing): Standalone generative AI plan providing 1,000 monthly AI coins for US$9.99/mo.
+- [Team & Corporate Licensing](https://www.motionelements.com/corporate): Multi-seat licenses featuring shared team asset access and administrative control tools.
+- [Pay-Per-Item Purchasing](https://www.motionelements.com/pricing): On-demand single asset transactions with micro-pricing options starting from US$1.
+
+## Supported Stock Media & Formats
+
+- [Stock Videos](https://www.motionelements.com/video): Royalty-free live action stock footage, aerial drone clips, background animations, and production elements.
+- [Stock Music](https://www.motionelements.com/music): Royalty-free stock music tracks, audio themes, background score elements, and cinematic audio production assets.
+- [Sound Effects](https://www.motionelements.com/sound-effects): High-quality royalty-free sound effects (SFX), ambient background noises, transitions, and audio design elements for video editing.
+- [After Effects Templates](https://www.motionelements.com/after-effects-templates): Professional project files for Adobe After Effects including logo stings, slideshows, lower thirds, and intro animations.
+- [Premiere Pro Templates](https://www.motionelements.com/premiere-pro-templates): Native motion graphics templates (MOGRTs) and video project workflows designed for Adobe Premiere Pro.
+- [DaVinci Resolve Templates](https://www.motionelements.com/davinci-resolve-templates): High-performance macros, titles, and video project templates built directly for DaVinci Resolve.
+- [Final Cut Pro Templates](https://www.motionelements.com/apple-motion-templates): Apple ecosystem project templates, transitions, and video assets optimized for Final Cut Pro (FCP) and Apple Motion.
+- [Notion Templates](https://www.motionelements.com/notion): Productivity workspaces, organizational dashboards, tracker systems, and customized setup layouts for Notion.
+- [Presentation Templates](https://www.motionelements.com/presentation): Professionally designed layouts, pitch decks, and slideshow graphics ready for corporate or creative presentation suites.
+- [Lottie Animations](https://www.motionelements.com/lottie): Lightweight, interactive vector animations optimized for rapid web and mobile app user interface deployment.
+- [UI Templates](https://www.motionelements.com/ui): Wireframes, web interface assets, user experience components, and modular application user interface layout graphics.
+- [3D Models](https://www.motionelements.com/3d): Multi-format three-dimensional spatial assets, textured environmental props, and digital elements engineered for 3D staging environments.
+- [Photos](https://www.motionelements.com/stock-image): High-resolution royalty-free stock photography and commercial-ready creative images across diverse thematic categories.
+- [Vectors](https://www.motionelements.com/stock-image): Scalable vector graphics, illustrations, icons, and digital design assets in editable vector formats.
+
+## Studio AI Generative Engine
+
+- [Explore Studio AI](https://ai.motionelements.com/): The central AI production hub featuring 100+ state-of-the-art models including Sora 2, Veo 3, Kling 3, Seedream 5, and Nano Banana 2.
+- [AI Video & Image Tools](https://ai.motionelements.com/): Access to Text-to-Video, Image-to-Video, Asset-First AI Remixing, Background Removal, and Face Swaps.
+- [AI Audio & Voice](https://ai.motionelements.com/): Features the Music Duration Adjuster alongside professional Text-to-Speech voiceover generation.
+
+## Legal & Asset Protections
+
+- [Official License Terms](https://www.motionelements.com/legal/license): Comprehensive details on the perpetual, global royalty-free "Buy Once, Use Forever" commercial license.
+- [AI Commercial Safety Policy](https://www.motionelements.com/legal/license): Guidelines detailing commercial clearance rules for generative outputs utilizing licensed stock or verified source assets.
+
+## Support & Discovery Tools
+
+- [Visual & Audio Search Engine](https://www.motionelements.com/): Reverse image and audio matching search utilities using user-uploaded reference files or YouTube links.
+- [Global Customer Support](mailto:support@motionelements.com): Native-language customer assistance specializing in localized Japanese, Korean, and Chinese regional content support.
+
+## Frequently Asked Questions (FAQs)
+
+- [Is AI output commercially safe?](https://www.motionelements.com/legal/license): Yes, provided the source inputs are legally cleared. Generated outputs are instantly safe for commercial business use when users utilize MotionElements' stock assets, officially licensed AI styles, or upload their own rights-cleared files.
+- [What is the AI Remix workflow?](https://ai.motionelements.com/): Users can push a downloaded stock asset straight into Studio AI as a direct visual reference. By using the 26M+ licensed library as a reference, creators eliminate prompt unpredictability and keep strict brand consistency.
+- [Are the stock assets on MotionElements generated by AI?](https://www.motionelements.com/subscribe): The bulk of the 26M+ stock catalog is created by human contributors. A small, highly curated percentage of AI-generated images is included primarily for exceptional aesthetic appeal.
+- [What are AI Coins and what happens if I run out?](https://ai.motionelements.com/pricing): AI Coins are the credit system that powers Studio AI tools. If you consume your plan's monthly allowance, you can easily purchase additional coins on a flexible, pay-as-you-go basis.
+- [What happens to my commercial rights if I cancel my subscription?](https://www.motionelements.com/legal/license): Your rights remain secure. Any stock assets downloaded or AI content remixed during an active subscription are covered by a perpetual, "buy once, use forever" license that stays valid even after your subscription ends.

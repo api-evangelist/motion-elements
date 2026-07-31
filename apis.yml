@@ -1,25 +1,157 @@
 aid: motion-elements
 name: Motion Elements
-description: Motion Elements is a company surfaced as a portfolio company of 500-global and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: 'MotionElements is a global creative-asset marketplace and AI production platform offering
+  an unlimited-download subscription catalog of 26M+ royalty-free assets: stock video, music, sound effects,
+  motion and editing templates (After Effects, Premiere Pro, Final Cut / Apple Motion, DaVinci Resolve,
+  .mogrt), photos, vectors, GIFs and Lottie animations, plus Studio AI generative tools. Its Marketplace
+  API v2 lets platforms search, retrieve, license and download from the catalog using HTTP Basic authentication
+  (API secret key as username) over HTTPS.'
 url: https://raw.githubusercontent.com/api-evangelist/motion-elements/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: has-public-api
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
+- Media
+- Stock Media
+- Video
+- Music
+- Sound Effects
+- Templates
+- Marketplace
+- Creative Assets
+- Generative AI
+- Search
 - Company
-apis: []
+apis:
+- aid: motion-elements:motion-elements-account-api
+  name: Motion Elements Account API
+  description: Authenticated account details.
+  humanURL: https://www.motionelements.com/developer
+  baseURL: https://api.motionelements.com/v2
+  tags:
+  - Account
+  properties:
+  - type: OpenAPI
+    url: openapi/motion-elements-account-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.motionelements.com/
+  - type: APIReference
+    url: https://api-docs.motionelements.com/
+- aid: motion-elements:motion-elements-elements-api
+  name: Motion Elements Elements API
+  description: Retrieve individual marketplace elements.
+  humanURL: https://www.motionelements.com/developer
+  baseURL: https://api.motionelements.com/v2
+  tags:
+  - Elements
+  properties:
+  - type: OpenAPI
+    url: openapi/motion-elements-elements-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.motionelements.com/
+  - type: APIReference
+    url: https://api-docs.motionelements.com/
+- aid: motion-elements:motion-elements-media-types-api
+  name: Motion Elements Media types API
+  description: 'Reference metadata: media types, categories, software versions, and music facets.'
+  humanURL: https://www.motionelements.com/developer
+  baseURL: https://api.motionelements.com/v2
+  tags:
+  - Media types
+  properties:
+  - type: OpenAPI
+    url: openapi/motion-elements-media-types-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.motionelements.com/
+  - type: APIReference
+    url: https://api-docs.motionelements.com/
+- aid: motion-elements:motion-elements-search-api
+  name: Motion Elements Search API
+  description: Search the marketplace across media types.
+  humanURL: https://www.motionelements.com/developer
+  baseURL: https://api.motionelements.com/v2
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/motion-elements-search-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.motionelements.com/
+  - type: APIReference
+    url: https://api-docs.motionelements.com/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/motion-elements-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/motion-elements-agentic-access.yml
+- type: Authentication
+  url: authentication/motion-elements-authentication.yml
 - type: Website
   url: https://motionelements.com
+- type: Conventions
+  url: conventions/motion-elements-conventions.yml
+- type: Conformance
+  url: conformance/motion-elements-conformance.yml
+- type: Lifecycle
+  url: lifecycle/motion-elements-lifecycle.yml
+- type: MCPServer
+  url: mcp/motion-elements-mcp.yml
+- type: LLMsTxt
+  url: llms/motion-elements-llms.txt
+- type: DataModel
+  url: data-model/motion-elements-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DeveloperPortal
+  url: https://www.motionelements.com/developer
+- type: Documentation
+  url: https://api-docs.motionelements.com/
+- type: APIReference
+  url: https://api-docs.motionelements.com/
+- type: GettingStarted
+  url: https://www.motionelements.com/developer
+- type: Support
+  url: https://help.motionelements.com/
+- type: Blog
+  url: https://www.motionelements.com/blog
+- type: GitHubOrganization
+  url: https://github.com/motionelements
+- type: Pricing
+  url: https://www.motionelements.com/pricing
+- type: SignUp
+  url: https://www.motionelements.com/signup
+- type: TermsOfService
+  url: https://www.motionelements.com/legal/terms
+- type: PrivacyPolicy
+  url: https://www.motionelements.com/legal/privacy
+- type: PostmanWorkspace
+  url: https://api-docs.motionelements.com/
+image: https://static.moele.me/img/motionelements-og-en.220830.jpg
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1

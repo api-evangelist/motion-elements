@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-docs.motionelements.com/
+description: >-
+  Versioning and lifecycle posture for the MotionElements Marketplace API,
+  from the published v2 documentation.
+versioning:
+  scheme: uri-path
+  current: v2
+  base_url: https://api.motionelements.com/v2
+  predecessor:
+    version: v1
+    docs: https://motionelements.docs.apiary.io/
+    note: Legacy v1 documented on Apiary; superseded by v2.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+status_page: null
+deprecated_operations: []

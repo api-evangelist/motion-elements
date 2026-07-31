@@ -1,0 +1,14 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/motion-elements-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic authentication. Use your API secret key (created in the Developer
+    Console) as the username; leave the password empty.
+  sources:
+  - openapi/motion-elements-openapi.yml

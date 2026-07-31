@@ -1,0 +1,12 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/motion-elements-openapi.yml
+skills:
+  - file: motion-elements-search-and-license.md
+    name: Search and retrieve a MotionElements asset
+    api: openapi/motion-elements-openapi.yml
+    operations: [searchVideos, searchMusic, getElement, getAccount]
+  - file: motion-elements-discover-media-taxonomy.md
+    name: Discover MotionElements media taxonomy
+    api: openapi/motion-elements-openapi.yml
+    operations: [listMediaTypes, listMediaTypeCategories, listMediaTypeSoftwareVersions, listMediaTypeInstruments, listMediaTypeMusicalKeys]

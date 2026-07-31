@@ -1,0 +1,63 @@
+generated: '2026-07-20'
+method: searched
+source: https://api-docs.motionelements.com/ (Marketplace API v2 collection description)
+description: >-
+  Cross-cutting request/response conventions for the MotionElements Marketplace
+  API v2 — authentication, pagination, sorting, localization/currency
+  parameters, and the list-envelope shape that apply across every operation.
+
+base_url: https://api.motionelements.com/v2
+api_style: REST over HTTPS, JSON responses
+
+authentication:
+  scheme: HTTP Basic (API secret key as username, empty password)
+  key_source: Developer Console (https://www.motionelements.com/developer/app)
+  transport: HTTPS only
+  detail: authentication/motion-elements-authentication.yml
+
+pagination:
+  style: page-number
+  request_params:
+    page: Page number, default 1
+    per_page: Results per page, default 100
+  response_fields:
+    object: "\"list\" for paginated collections"
+    page: Current page number
+    per_page: Items returned per page
+    total_count: Total number of matching items
+    data: Array of result objects
+
+sorting:
+  param: sort
+  format: "comma-separated field list; prefix a field with `-` for descending"
+  example: "sort=credits,-created_at (credits ascending, then created_at descending)"
+
+localization:
+  language:
+    param: language
+    values: [en, ja, ko, zh-hant]
+    note: ISO 639-1 language code in lowercase
+  currency:
+    param: currency
+    values: [USD, EUR, JPY, KRW, TWD]
+    note: ISO 4217 currency code in uppercase; affects returned price/credits
+
+idempotency:
+  supported: false
+  note: >-
+    The published API is read-dominant (search + reference lookups) with a
+    single PATCH on /account; no idempotency-key header is documented.
+
+error_envelope:
+  note: >-
+    Errors surface via standard HTTP status codes (401 on missing/invalid
+    secret key, 404 on unknown element/media-type). A dedicated documented
+    problem schema was not published in the collection.
+
+rate_limit_signaling:
+  note: No rate-limit headers or quota policy are documented in the public collection.
+
+cross_links:
+  authentication: authentication/motion-elements-authentication.yml
+  lifecycle: lifecycle/motion-elements-lifecycle.yml
+  data_model: data-model/motion-elements-data-model.yml

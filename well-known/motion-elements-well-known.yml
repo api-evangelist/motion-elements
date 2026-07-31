@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: live probe of /.well-known/* on MotionElements hosts
+description: >-
+  Probe of the /.well-known/ discovery surface. No discovery documents were
+  found (no security.txt, OIDC, OAuth AS metadata, api-catalog, or ai-plugin).
+hosts:
+  - host: https://www.motionelements.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+  - host: https://api.motionelements.com
+    documents:
+      - {path: /.well-known/security.txt, status: 503}
+      - {path: /.well-known/openid-configuration, status: 503}
+      - {path: /.well-known/oauth-authorization-server, status: 503}
+      - {path: /.well-known/api-catalog, status: 503}
+      - {path: /.well-known/ai-plugin.json, status: 503}

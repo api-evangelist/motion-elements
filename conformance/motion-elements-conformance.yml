@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/motion-elements-openapi.yml
+description: >-
+  Cross-cutting standards conformance for the MotionElements Marketplace API v2,
+  derived from the harvested OpenAPI and the published collection conventions.
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: API uses HTTP Basic auth (secret key as username); no oauth2 securityScheme.
+  - id: openid-connect
+    conforms: false
+  - id: http-basic-auth
+    conforms: true
+    evidence: components.securitySchemes.basicAuth (type http, scheme basic).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No application/problem+json responses documented.
+  - id: json-api
+    conforms: false
+  - id: pagination
+    conforms: true
+    evidence: Consistent page/per_page request params and object/total_count/data list envelope.
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key header documented; API is read-dominant.
+  - id: iso-639-1-language
+    conforms: true
+    evidence: language param accepts ISO 639-1 codes (en, ja, ko, zh-hant).
+  - id: iso-4217-currency
+    conforms: true
+    evidence: currency param accepts ISO 4217 codes (USD, EUR, JPY, KRW, TWD).

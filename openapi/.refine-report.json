@@ -1,0 +1,20 @@
+{
+  "provider": "motion-elements",
+  "sources": [
+    "motion-elements-account-api-openapi.yml",
+    "motion-elements-elements-api-openapi.yml",
+    "motion-elements-media-types-api-openapi.yml",
+    "motion-elements-search-api-openapi.yml"
+  ],
+  "outputs": [
+    "motion-elements-account-api-openapi.yml",
+    "motion-elements-elements-api-openapi.yml",
+    "motion-elements-media-types-api-openapi.yml",
+    "motion-elements-search-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

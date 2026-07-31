@@ -1,0 +1,73 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/motion-elements-openapi.yml
+description: Candidate MCP server for the MotionElements Marketplace API v2. Tools derived one-per-operation
+  from the harvested OpenAPI. No official hosted MCP server was found; this is a proposed tool surface.
+server:
+  name: motion-elements
+  transport: http
+tools:
+- name: get_account
+  description: Get the authenticated account details
+  source_operation: openapi/motion-elements-openapi.yml#getAccount
+- name: update_account
+  description: Update account settings
+  source_operation: openapi/motion-elements-openapi.yml#updateAccount
+- name: search_videos
+  description: Search stock videos
+  source_operation: openapi/motion-elements-openapi.yml#searchVideos
+- name: search_music
+  description: Search stock music
+  source_operation: openapi/motion-elements-openapi.yml#searchMusic
+- name: search_sound_effects
+  description: Search sound effects
+  source_operation: openapi/motion-elements-openapi.yml#searchSoundEffects
+- name: search_after_effects_templates
+  description: Search After Effects templates
+  source_operation: openapi/motion-elements-openapi.yml#searchAfterEffectsTemplates
+- name: search_motion_templates
+  description: Search Final Cut Pro / Apple Motion templates
+  source_operation: openapi/motion-elements-openapi.yml#searchMotionTemplates
+- name: search_premiere_pro_templates
+  description: Search Premiere Pro templates
+  source_operation: openapi/motion-elements-openapi.yml#searchPremiereProTemplates
+- name: search_motion_graphics_templates
+  description: Search Motion Graphics (.mogrt) templates
+  source_operation: openapi/motion-elements-openapi.yml#searchMotionGraphicsTemplates
+- name: search_resolve_templates
+  description: Search DaVinci Resolve templates
+  source_operation: openapi/motion-elements-openapi.yml#searchResolveTemplates
+- name: search_photos
+  description: Search photos
+  source_operation: openapi/motion-elements-openapi.yml#searchPhotos
+- name: search_vectors
+  description: Search vectors
+  source_operation: openapi/motion-elements-openapi.yml#searchVectors
+- name: search_gifs
+  description: Search GIFs
+  source_operation: openapi/motion-elements-openapi.yml#searchGifs
+- name: search_lottie
+  description: Search Lottie animations
+  source_operation: openapi/motion-elements-openapi.yml#searchLottie
+- name: get_element
+  description: Get a single element (asset) by id
+  source_operation: openapi/motion-elements-openapi.yml#getElement
+- name: list_media_types
+  description: List supported media types
+  source_operation: openapi/motion-elements-openapi.yml#listMediaTypes
+- name: list_media_type_categories
+  description: List categories for a media type
+  source_operation: openapi/motion-elements-openapi.yml#listMediaTypeCategories
+- name: list_media_type_software_versions
+  description: List software versions for a media type
+  source_operation: openapi/motion-elements-openapi.yml#listMediaTypeSoftwareVersions
+- name: list_media_type_edit_types
+  description: List music edit types
+  source_operation: openapi/motion-elements-openapi.yml#listMediaTypeEditTypes
+- name: list_media_type_instruments
+  description: List music instruments
+  source_operation: openapi/motion-elements-openapi.yml#listMediaTypeInstruments
+- name: list_media_type_musical_keys
+  description: List music musical keys
+  source_operation: openapi/motion-elements-openapi.yml#listMediaTypeMusicalKeys

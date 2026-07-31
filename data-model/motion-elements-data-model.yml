@@ -1,0 +1,59 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/motion-elements-openapi.yml, example responses in postman/motion-elements-postman-collection.json
+description: >-
+  Entity-relationship model for the MotionElements Marketplace API v2, derived
+  from the OpenAPI operations and the example response payloads (object tags:
+  element, media_type, category, software, artist, list).
+entities:
+  - name: element
+    object: element
+    description: A licensable marketplace asset (video, music, sfx, template, photo, vector, gif, lottie).
+    key_fields: [id, name, price, currency, credits, subscription, free, exclusive, usage_rights, artist]
+    relationships:
+      - {type: belongs_to, target: artist, via: artist}
+      - {type: belongs_to, target: media_type, via: media_type}
+  - name: artist
+    object: artist
+    description: The contributor who created an element.
+    key_fields: [username]
+    relationships:
+      - {type: has_many, target: element}
+  - name: media_type
+    object: media_type
+    description: A top-level asset class (e.g. image, video, audio) with sub_media_types.
+    key_fields: [id, code, name, group, video, audio, sub_media_types]
+    relationships:
+      - {type: has_many, target: category, via: mediaType}
+      - {type: has_many, target: software, via: mediaType}
+      - {type: has_many, target: edit_type, via: mediaType}
+      - {type: has_many, target: instrument, via: mediaType}
+      - {type: has_many, target: musical_key, via: mediaType}
+  - name: category
+    object: category
+    description: A taxonomy category (e.g. style, theme) scoped to a media type.
+    key_fields: [id, name, type]
+    relationships:
+      - {type: belongs_to, target: media_type}
+  - name: software
+    object: software
+    description: An editing application (e.g. Adobe After Effects) and its supported versions.
+    key_fields: [id, name, versions]
+    relationships:
+      - {type: belongs_to, target: media_type}
+  - name: edit_type
+    object: edit_type
+    description: A music edit variant (full, instrumental, stinger, bumper, ...).
+    key_fields: [id, name]
+  - name: instrument
+    object: instrument
+    description: A music instrument, grouped into instrument families.
+    key_fields: [id, name, group]
+  - name: musical_key
+    object: musical_key
+    description: A musical key, grouped by major/minor.
+    key_fields: [id, name, group]
+  - name: account
+    object: account
+    description: The authenticated API account (subscription, credits, currency).
+    key_fields: [id]

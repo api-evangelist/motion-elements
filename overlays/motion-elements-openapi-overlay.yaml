@@ -1,0 +1,23 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for MotionElements Marketplace API
+  version: 1.0.0
+extends: openapi/motion-elements-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: true
+      x-apievangelist-source: https://api-docs.motionelements.com/
+      x-api-style: REST
+  - target: $.tags
+    update:
+      - name: Account
+      - name: Search
+      - name: Elements
+      - name: Media types
+  - target: $.info
+    update:
+      x-agent-readiness-notes: >-
+        Read-dominant search API over 26M+ royalty-free creative assets.
+        HTTP Basic auth (secret key as username). Page-number pagination
+        (page/per_page); list envelope {object,page,per_page,total_count,data}.

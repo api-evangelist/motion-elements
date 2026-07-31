@@ -1,0 +1,2566 @@
+# generated: '2026-07-20'
+# method: searched
+# source: https://api-docs.motionelements.com/ (MotionElements Marketplace API v2 Postman collection)
+openapi: 3.0.3
+info:
+  title: MotionElements Marketplace API
+  version: 2.0.0
+  description: MotionElements Marketplace API v2 lets you search, retrieve, license and download from
+    the MotionElements library of 26M+ royalty-free stock video, music, sound effects, motion/editing
+    templates (After Effects, Premiere Pro, Final Cut/Motion, DaVinci Resolve, .mogrt), photos, vectors,
+    GIFs and Lottie animations. Authentication is HTTP Basic using your API secret key as the username
+    (no password). All requests are over HTTPS. Harvested from the provider's published Postman collection
+    (Marketplace API v2).
+  contact:
+    name: MotionElements Support
+    email: support@motionelements.com
+    url: https://www.motionelements.com/developer
+  termsOfService: https://www.motionelements.com/legal/license
+externalDocs:
+  description: MotionElements API v2 documentation
+  url: https://api-docs.motionelements.com/
+servers:
+- url: https://api.motionelements.com
+  description: Production
+security:
+- basicAuth: []
+tags:
+- name: Account
+  description: Authenticated account details.
+- name: Search
+  description: Search the marketplace across media types.
+- name: Elements
+  description: Retrieve individual marketplace elements.
+- name: Media types
+  description: 'Reference metadata: media types, categories, software versions, and music facets.'
+paths:
+  /v2/account:
+    get:
+      operationId: getAccount
+      summary: Get account details
+      tags:
+      - Account
+      description: Retrieve the authenticated account's details (subscription, credits, currency).
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - &id001
+        name: language
+        in: query
+        description: 'ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant.'
+        schema:
+          type: string
+          enum:
+          - en
+          - ja
+          - ko
+          - zh-hant
+      - &id002
+        name: currency
+        in: query
+        description: 'ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD.'
+        schema:
+          type: string
+          enum:
+          - USD
+          - EUR
+          - JPY
+          - KRW
+          - TWD
+    patch:
+      operationId: updateAccount
+      summary: Update account details
+      tags:
+      - Account
+      description: Update mutable settings on the authenticated account.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+  /v2/search/video:
+    get:
+      operationId: searchVideos
+      summary: Search videos
+      tags:
+      - Search
+      description: Search videos in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                object: list
+                page: 1
+                per_page: 1
+                total_count: 10000
+                data:
+                - object: element
+                  id: '14405225'
+                  name: High waterfall from the tall cliff in the mountains surrounded by the forest
+                  favorited: false
+                  similarity: true
+                  new: true
+                  exclusive: false
+                  usage_rights:
+                    license: royalty_free
+                  subscription: false
+                  free: false
+                  price: '130'
+                  currency: USD
+                  credits: 130
+                  artist:
+                    username: Silezkiy
+                  media_type: video_live
+                  media_type_details:
+                    aspect_ratio: '16:9'
+                  previews:
+                    jpg:
+                      url: https://d1o2pwfline4gu.cloudfront.net/m/t/14415/14405225/a-0142.jpg
+                    webm:
+                      url: https://d3auje5car4oak.cloudfront.net/v/14415/14405225_a-01.webm
+                    mp4:
+                      url: https://d3auje5car4oak.cloudfront.net/v/14415/14405225_a-01.mp4
+                  thumbnails:
+                    jpg:
+                      url: https://d1o2pwfline4gu.cloudfront.net/m/t/14415/14405225/a-0142.jpg
+                  categories:
+                  - id: '34'
+                    name: Nature
+                    type: category
+                  html:
+                    url: https://stage.motionelements.com/stock-video-14405225-high-waterfall-from-the-tall-cliff-in-the-mountains-surrounded-by-the-forest
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: resolution
+        in: query
+        description: Filter results by resolution.
+        schema:
+          type: string
+      - name: model_release
+        in: query
+        description: Filter results by model release.
+        schema:
+          type: string
+      - name: property_release
+        in: query
+        description: Filter results by property release.
+        schema:
+          type: string
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: color
+        in: query
+        description: Filter results by color.
+        schema:
+          type: string
+      - name: license
+        in: query
+        description: Filter results by license.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/music:
+    get:
+      operationId: searchMusic
+      summary: Search music
+      tags:
+      - Search
+      description: Search music in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: license
+        in: query
+        description: Filter results by license.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/sfx:
+    get:
+      operationId: searchSoundEffects
+      summary: Search sound effects
+      tags:
+      - Search
+      description: Search sound effects in the MotionElements marketplace. Returns a paginated list of
+        elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/ae_template:
+    get:
+      operationId: searchAfterEffectsTemplates
+      summary: Search After Effects templates
+      tags:
+      - Search
+      description: Search After Effects templates in the MotionElements marketplace. Returns a paginated
+        list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: tutorial
+        in: query
+        description: Filter results by tutorial.
+        schema:
+          type: string
+      - name: plugin
+        in: query
+        description: Filter results by plugin.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/motion_template:
+    get:
+      operationId: searchMotionTemplates
+      summary: Search Final Cut Pro / Apple Motion templates
+      tags:
+      - Search
+      description: Search Final Cut Pro / Apple Motion templates in the MotionElements marketplace. Returns
+        a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: tutorial
+        in: query
+        description: Filter results by tutorial.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/pr_template:
+    get:
+      operationId: searchPremiereProTemplates
+      summary: Search Premiere Pro templates
+      tags:
+      - Search
+      description: Search Premiere Pro templates in the MotionElements marketplace. Returns a paginated
+        list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: tutorial
+        in: query
+        description: Filter results by tutorial.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/mg_template:
+    get:
+      operationId: searchMotionGraphicsTemplates
+      summary: Search Motion Graphics (.mogrt) templates
+      tags:
+      - Search
+      description: Search Motion Graphics (.mogrt) templates in the MotionElements marketplace. Returns
+        a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: tutorial
+        in: query
+        description: Filter results by tutorial.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/resolve_template:
+    get:
+      operationId: searchResolveTemplates
+      summary: Search DaVinci Resolve templates
+      tags:
+      - Search
+      description: Search DaVinci Resolve templates in the MotionElements marketplace. Returns a paginated
+        list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: subscription
+        in: query
+        description: Filter results by subscription.
+        schema:
+          type: string
+      - name: price_range
+        in: query
+        description: Filter results by price range.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: tutorial
+        in: query
+        description: Filter results by tutorial.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/photo:
+    get:
+      operationId: searchPhotos
+      summary: Search photos
+      tags:
+      - Search
+      description: Search photos in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: color
+        in: query
+        description: Filter results by color.
+        schema:
+          type: string
+      - name: model_release
+        in: query
+        description: Filter results by model release.
+        schema:
+          type: string
+      - name: property_release
+        in: query
+        description: Filter results by property release.
+        schema:
+          type: string
+      - name: license
+        in: query
+        description: Filter results by license.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/vector:
+    get:
+      operationId: searchVectors
+      summary: Search vectors
+      tags:
+      - Search
+      description: Search vectors in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: color
+        in: query
+        description: Filter results by color.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/gif:
+    get:
+      operationId: searchGifs
+      summary: Search GIFs
+      tags:
+      - Search
+      description: Search GIFs in the MotionElements marketplace. Returns a paginated list of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - name: color
+        in: query
+        description: Filter results by color.
+        schema:
+          type: string
+      - name: model_release
+        in: query
+        description: Filter results by model release.
+        schema:
+          type: string
+      - name: property_release
+        in: query
+        description: Filter results by property release.
+        schema:
+          type: string
+      - name: license
+        in: query
+        description: Filter results by license.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/search/lottie:
+    get:
+      operationId: searchLottie
+      summary: Search Lottie animations
+      tags:
+      - Search
+      description: Search Lottie animations in the MotionElements marketplace. Returns a paginated list
+        of elements.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: q
+        in: query
+        description: Search keyword / query string.
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: Sort expression, e.g. `credits,-created_at` (prefix `-` for descending).
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page number (default 1).
+        schema:
+          type: integer
+          default: 1
+      - name: per_page
+        in: query
+        description: Results per page (default 100).
+        schema:
+          type: integer
+          default: 100
+          maximum: 100
+      - name: artist
+        in: query
+        description: Filter results by artist.
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: Filter results by category.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/elements/{id}:
+    get:
+      operationId: getElement
+      summary: Get element
+      tags:
+      - Elements
+      description: Retrieve a single marketplace element (asset) by its id.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Element (asset) id.
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/media-types:
+    get:
+      operationId: listMediaTypes
+      summary: List media types
+      tags:
+      - Media types
+      description: List all supported media types and their sub-media-types.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                - object: media_type
+                  id: image
+                  code: image
+                  name: Image ・ GIF
+                  name_plural: Images ・ GIFs
+                  name_seo: Stock Image ・ Animated GIF
+                  name_seo_plural: Stock Image ・ Animated GIF
+                  name_seo_free: Free stock image
+                  name_short: Image
+                  name_short_plural: Image
+                  video: false
+                  audio: false
+                  group: image
+                  sub_media_types:
+                  - photo
+                  - vector
+                  - gif
+                - object: media_type
+                  id: video
+                  code: video
+                  name: Video
+                  name_plural: Videos
+                  name_seo: Stock video footage
+                  name_seo_plural: Stock video footage
+                  name_seo_free: Free stock footage
+                  name_short: Video
+                  name_short_plural: Video
+                  video: false
+                  audio: false
+                  group: video
+                  sub_media_types:
+                  - animation
+                  - video_live
+                  - video_vr
+                - object: media_type
+                  id: ae
+                  code: ae
+                  name: After Effects
+                  name_plural: After Effects
+                  name_seo: After Effects
+                  name_seo_plural: After Effects
+                  name_seo_free: Free After Effects templates
+                  name_short: AE
+                  name_short_plural: AE
+                  video: false
+                  audio: false
+                  group: ae
+                  sub_media_types:
+                  - ae_template
+                  - ae_preset
+                - object: media_type
+                  id: pr
+                  code: pr
+                  name: Premiere Pro
+                  name_plural: Premiere Pro
+                  name_seo: Premiere Pro
+                  name_seo_plural: Premiere Pro
+                  name_seo_free: Free Premiere Pro templates
+                  name_short: Premiere
+                  name_short_plural: Premiere
+                  video: false
+                  audio: false
+                  group: pr
+                  sub_media_types:
+                  - pr_template
+                  - mg_template
+                  - pr_preset
+                - object: media_type
+                  id: fcp
+                  code: fcp
+                  name: FCPX ・ Motion
+                  name_plural: FCPX ・ Motion
+                  name_seo: Apple Motion / FCPX Templates
+                  name_seo_plural: Apple Motion / FCPX Templates
+                  name_seo_free: Free FCPX Motion templates
+                  name_short: FCPX ・ Motion
+                  name_short_plural: FCPX ・ Motion
+                  video: false
+                  audio: false
+                  group: fcp
+                  sub_media_types:
+                  - motion_template
+                - object: media_type
+                  id: resolve
+                  code: resolve
+                  name: DaVinci Resolve
+                  name_plural: DaVinci Resolve
+                  name_seo: DaVinci Resolve
+                  name_seo_plural: DaVinci Resolve
+                  name_seo_free: Free Davinci Resolve Templates
+                  name_short: DaVinci Resolve
+                  name_short_plural: DaVinci Resolve
+                  video: false
+                  audio: false
+                  group: resolve
+                  sub_media_types:
+                  - resolve_template
+                  - resolve_macro
+                - object: media_type
+                  id: 3d
+                  code: 3d
+                  name: 3D
+                  name_plural: 3D
+                  name_seo: 3D models
+                  name_seo_plural: 3D models
+                  name_seo_free: ''
+                  name_short: 3D
+                  name_short_plural: 3D
+                  video: false
+                  audio: false
+                  group: 3d
+                  sub_media_types:
+                  - 3d_model
+                - object: media_type
+                  id: '1'
+                  code: photo
+                  name: Photo
+                  name_plural: Photos
+                  name_seo: Stock Photo
+                  name_seo_plural: Stock Photo
+                  name_seo_free: ''
+                  name_short: Photo
+                  name_short_plural: Photo
+                  video: false
+                  audio: false
+                  group: image
+                  sub_media_types: []
+                - object: media_type
+                  id: '2'
+                  code: vector
+                  name: Vector
+                  name_plural: Vectors
+                  name_seo: Stock Vector
+                  name_seo_plural: Stock Vector
+                  name_seo_free: ''
+                  name_short: Vector
+                  name_short_plural: Vector
+                  video: false
+                  audio: false
+                  group: image
+                  sub_media_types: []
+                - object: media_type
+                  id: '3'
+                  code: animation
+                  name: Animation
+                  name_plural: Animations
+                  name_seo: Stock Animation
+                  name_seo_plural: Stock Animation
+                  name_seo_free: ''
+                  name_short: Animation
+                  name_short_plural: Animation
+                  video: true
+                  audio: false
+                  group: video
+                  sub_media_types: []
+                - object: media_type
+                  id: '4'
+                  code: video_live
+                  name: Live Action
+                  name_plural: Live Action
+                  name_seo: Live Action
+                  name_seo_plural: Live Action
+                  name_seo_free: ''
+                  name_short: Live Action
+                  name_short_plural: Live Action
+                  video: false
+                  audio: false
+                  group: video
+                  sub_media_types: []
+                - object: media_type
+                  id: '5'
+                  code: 3d_model
+                  name: 3D Model
+                  name_plural: 3D Models
+                  name_seo: 3D models
+                  name_seo_plural: 3D models
+                  name_seo_free: ''
+                  name_short: 3D
+                  name_short_plural: 3D
+                  video: false
+                  audio: false
+                  group: 3d
+                  sub_media_types: []
+                - object: media_type
+                  id: '6'
+                  code: music
+                  name: Music
+                  name_plural: Music
+                  name_seo: Background music for video
+                  name_seo_plural: Background music for video
+                  name_seo_free: Free background music
+                  name_short: Music
+                  name_short_plural: Music
+                  video: false
+                  audio: true
+                  group: music
+                  sub_media_types: []
+                - object: media_type
+                  id: '7'
+                  code: sfx
+                  name: Sound Effects
+                  name_plural: Sound Effects
+                  name_seo: Sound Effects for Video
+                  name_seo_plural: Sound Effects for Video
+                  name_seo_free: Free sound effects
+                  name_short: SFX
+                  name_short_plural: SFX
+                  video: false
+                  audio: true
+                  group: sfx
+                  sub_media_types: []
+                - object: media_type
+                  id: '8'
+                  code: ae_template
+                  name: After Effects Template
+                  name_plural: After Effects Templates
+                  name_seo: After Effects templates
+                  name_seo_plural: After Effects templates
+                  name_seo_free: ''
+                  name_short: AE
+                  name_short_plural: AE
+                  video: false
+                  audio: false
+                  group: ae
+                  sub_media_types: []
+                - object: media_type
+                  id: '9'
+                  code: motion_template
+                  name: Apple Motion Template
+                  name_plural: Apple Motion Templates
+                  name_seo: Apple Motion templates
+                  name_seo_plural: Apple Motion templates
+                  name_seo_free: ''
+                  name_short: Apple Motion
+                  name_short_plural: Apple Motion
+                  video: false
+                  audio: false
+                  group: fcp
+                  sub_media_types: []
+                - object: media_type
+                  id: '11'
+                  code: photo_vr
+                  name: VR 360° Photo
+                  name_plural: VR 360° Photos
+                  name_seo: 360° Photo
+                  name_seo_plural: 360° Photo
+                  name_seo_free: ''
+                  name_short: 360° Photo
+                  name_short_plural: 360° Photo
+                  video: false
+                  audio: false
+                  group: image
+                  sub_media_types: []
+                - object: media_type
+                  id: '12'
+                  code: video_vr
+                  name: VR 360° Video
+                  name_plural: VR 360° Videos
+                  name_seo: 360° Video
+                  name_seo_plural: 360° Video
+                  name_seo_free: ''
+                  name_short: 360° Video
+                  name_short_plural: 360° Video
+                  video: false
+                  audio: false
+                  group: video
+                  sub_media_types: []
+                - object: media_type
+                  id: '14'
+                  code: gif
+                  name: GIF
+                  name_plural: GIFs
+                  name_seo: GIF
+                  name_seo_plural: GIF
+                  name_seo_free: Free GIFs for commercial use
+                  name_short: GIF
+                  name_short_plural: GIF
+                  video: true
+                  audio: false
+                  group: image
+                  sub_media_types: []
+                - object: media_type
+                  id: '15'
+                  code: pr_template
+                  name: Premiere Pro Template
+                  name_plural: Premiere Pro Templates
+                  name_seo: Premiere Pro Template
+                  name_seo_plural: Premiere Pro Template
+                  name_seo_free: ''
+                  name_short: Premiere
+                  name_short_plural: Premiere
+                  video: false
+                  audio: false
+                  group: pr
+                  sub_media_types: []
+                - object: media_type
+                  id: '16'
+                  code: mg_template
+                  name: Motion Graphics Template
+                  name_plural: Motion Graphics Templates
+                  name_seo: Motion Graphics Template
+                  name_seo_plural: Motion Graphics Template
+                  name_seo_free: ''
+                  name_short: Motion Graphics
+                  name_short_plural: Motion Graphics
+                  video: false
+                  audio: false
+                  group: pr
+                  sub_media_types: []
+                - object: media_type
+                  id: '19'
+                  code: ae_preset
+                  name: After Effects Animation Preset
+                  name_plural: After Effects Presets
+                  name_seo: After Effects Animation Preset
+                  name_seo_plural: After Effects Animation Preset
+                  name_seo_free: ''
+                  name_short: AE Preset
+                  name_short_plural: AE Preset
+                  video: false
+                  audio: false
+                  group: ae
+                  sub_media_types: []
+                - object: media_type
+                  id: '20'
+                  code: pr_preset
+                  name: Premiere Pro Effect Preset
+                  name_plural: Premiere Pro Presets
+                  name_seo: Premiere Pro Effect Preset
+                  name_seo_plural: Premiere Pro Effect Preset
+                  name_seo_free: ''
+                  name_short: Premiere Preset
+                  name_short_plural: Premiere Preset
+                  video: false
+                  audio: false
+                  group: pr
+                  sub_media_types: []
+                - object: media_type
+                  id: '21'
+                  code: lottie
+                  name: Lottie
+                  name_plural: Lottie
+                  name_seo: Lottie Animation
+                  name_seo_plural: Lottie Animation
+                  name_seo_free: ''
+                  name_short: Lottie
+                  name_short_plural: Lottie
+                  video: true
+                  audio: false
+                  group: lottie
+                  sub_media_types: []
+                - object: media_type
+                  id: '22'
+                  code: resolve_template
+                  name: DaVinci Resolve Template
+                  name_plural: DaVinci Resolve Templates
+                  name_seo: DaVinci Resolve Template
+                  name_seo_plural: DaVinci Resolve Template
+                  name_seo_free: ''
+                  name_short: DaVinci Resolve Template
+                  name_short_plural: DaVinci Resolve Templates
+                  video: false
+                  audio: false
+                  group: resolve
+                  sub_media_types: []
+                - object: media_type
+                  id: '23'
+                  code: resolve_macro
+                  name: DaVinci Resolve Macro
+                  name_plural: DaVinci Resolve Macro
+                  name_seo: DaVinci Resolve Macro
+                  name_seo_plural: DaVinci Resolve Macro
+                  name_seo_free: ''
+                  name_short: DaVinci Resolve Macro
+                  name_short_plural: DaVinci Resolve Macro
+                  video: false
+                  audio: false
+                  group: resolve
+                  sub_media_types: []
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - *id001
+      - *id002
+  /v2/media-types/{mediaType}/categories:
+    get:
+      operationId: listMediaTypeCategories
+      summary: List media type categories
+      tags:
+      - Media types
+      description: List media type categories.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                total_count: 3
+                data:
+                - object: category
+                  id: '396'
+                  name: Vintage
+                  type: style
+                - object: category
+                  id: '70'
+                  name: Slow Motion
+                  type: style
+                - object: category
+                  id: '69'
+                  name: Timelapse
+                  type: style
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: mediaType
+        in: path
+        required: true
+        description: Media type code (e.g. video, music, sfx, photo).
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: Category type filter (e.g. style).
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/media-types/{mediaType}/software-versions:
+    get:
+      operationId: listMediaTypeSoftwareVersions
+      summary: List media type software versions
+      tags:
+      - Media types
+      description: List media type software versions.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                - id: ae
+                  object: software
+                  name: Adobe After Effects
+                  versions:
+                  - version: '6.0'
+                    display_version: '6'
+                  - version: '6.5'
+                    display_version: '6.5'
+                  - version: '7.0'
+                    display_version: '7'
+                  - version: '8.0'
+                    display_version: CS3
+                  - version: '9.0'
+                    display_version: CS4
+                  - version: '10.0'
+                    display_version: CS5
+                  - version: '10.5'
+                    display_version: CS5.5
+                  - version: '11.0'
+                    display_version: CS6
+                  - version: '12.0'
+                    display_version: CC
+                  - version: '13.0'
+                    display_version: CC 2014
+                  - version: '13.5'
+                    display_version: CC 2015
+                  - version: '13.8'
+                    display_version: CC 2015.3
+                  - version: '14.0'
+                    display_version: CC 2017
+                  - version: '15.0'
+                    display_version: CC 2018
+                  - version: '15.1'
+                    display_version: CC 2018.1
+                  - version: '16.0'
+                    display_version: CC 2019
+                  - version: '16.1'
+                    display_version: CC 2019.1
+                  - version: '17.0'
+                    display_version: CC 2020
+                  backward_compatible: true
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: mediaType
+        in: path
+        required: true
+        description: Media type code (e.g. video, music, sfx, photo).
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/media-types/{mediaType}/edit-types:
+    get:
+      operationId: listMediaTypeEditTypes
+      summary: List music edit types
+      tags:
+      - Media types
+      description: List music edit types.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                object: list
+                data:
+                - id: full
+                  name: Full Track
+                - id: instrumental
+                  name: Instrumental
+                - id: stinger
+                  name: Stinger
+                - id: bumper
+                  name: Bumper
+                - id: narrative
+                  name: Narrative
+                - id: underscore
+                  name: Underscore
+                - id: nodrum
+                  name: No Drums
+                - id: vocal
+                  name: Vocal only
+                - id: drum
+                  name: Drums only
+                - id: bass
+                  name: Bass only
+                - id: guitar
+                  name: Guitars only
+                - id: bed
+                  name: Bed
+                - id: loop
+                  name: Loop
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: mediaType
+        in: path
+        required: true
+        description: Media type code (e.g. video, music, sfx, photo).
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/media-types/{mediaType}/instruments:
+    get:
+      operationId: listMediaTypeInstruments
+      summary: List music instruments
+      tags:
+      - Media types
+      description: List music instruments.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                object: list
+                data:
+                - id: guitar
+                  name: Guitar
+                  group:
+                    id: guitar
+                    name: Guitar
+                - id: acoustic guitar
+                  name: Acoustic Guitar
+                  group:
+                    id: guitar
+                    name: Guitar
+                - id: banjo
+                  name: Banjo
+                  group:
+                    id: guitar
+                    name: Guitar
+                - id: electric guitar
+                  name: Electric Guitar
+                  group:
+                    id: guitar
+                    name: Guitar
+                - id: gut guitar
+                  name: Gut Guitar
+                  group:
+                    id: guitar
+                    name: Guitar
+                - id: jazz guitar
+                  name: Jazz Guitar
+                  group:
+                    id: guitar
+                    name: Guitar
+                - id: mandolin
+                  name: Mandolin
+                  group:
+                    id: guitar
+                    name: Guitar
+                - id: mute guitar
+                  name: Mute Guitar
+                  group:
+                    id: guitar
+                    name: Guitar
+                - id: steel guitar
+                  name: Steel Guitar
+                  group:
+                    id: guitar
+                    name: Guitar
+                - id: ukulele
+                  name: Ukulele
+                  group:
+                    id: guitar
+                    name: Guitar
+                - id: accordion
+                  name: Accordion
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: piano
+                  name: Piano
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: acoustic piano
+                  name: Acoustic Piano
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: bandoneon
+                  name: Bandoneon
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: celesta
+                  name: Celesta
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: clavinet
+                  name: Clavinet
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: electric piano
+                  name: Electric Piano
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: harpsichord
+                  name: Harpsichord
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: honky-tonk piano
+                  name: Honky-Tonk Piano
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: melotron
+                  name: Melotron
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: organ
+                  name: Organ
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: pipe organ
+                  name: Pipe Organ
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: reed organ
+                  name: Reed Organ
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: steet organ
+                  name: Steet Organ
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: thumb piano
+                  name: Thumb Piano
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: toy piano
+                  name: Toy Piano
+                  group:
+                    id: keyboards
+                    name: Keyboards
+                - id: bassoon
+                  name: Bassoon
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: blues harp
+                  name: Blues Harp
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: bottle blow
+                  name: Bottle Blow
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: clarinet
+                  name: Clarinet
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: cornet
+                  name: Cornet
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: english horn
+                  name: English Horn
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: flugel horn
+                  name: Flugel Horn
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: flute
+                  name: Flute
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: french horn
+                  name: French Horn
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: harmonica
+                  name: Harmonica
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: horn
+                  name: Horn
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: melodica
+                  name: Melodica
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: oboe
+                  name: Oboe
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: ocarina
+                  name: Ocarina
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: pan flute
+                  name: Pan Flute
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: piccolo
+                  name: Piccolo
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: pipe
+                  name: Pipe
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: recorder
+                  name: Recorder
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: sax
+                  name: Sax
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: swiss horn
+                  name: Swiss Horn
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: alto saxophone
+                  name: Alto Saxophone
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: soprano saxophone
+                  name: Soprano Saxophone
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: tenor saxophone
+                  name: Tenor Saxophone
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: trumpet
+                  name: Trumpet
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: mute trumpet
+                  name: Mute Trumpet
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: trombone
+                  name: Trombone
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: whistle
+                  name: Whistle
+                  group:
+                    id: wind_instruments
+                    name: Wind Instruments
+                - id: orchestra
+                  name: Orchestra
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: orchestra hit
+                  name: Orchestra Hit
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: cello
+                  name: Cello
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: harp
+                  name: Harp
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: pizzicato
+                  name: Pizzicato
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: strings
+                  name: Strings
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: timpani
+                  name: Timpani
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: tuba
+                  name: Tuba
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: viola
+                  name: Viola
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: violin
+                  name: Violin
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: vibraphone
+                  name: Vibraphone
+                  group:
+                    id: orchestra
+                    name: Orchestra
+                - id: bagpipe
+                  name: Bagpipe
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: berimbau
+                  name: Berimbau
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: bouzouki
+                  name: Bouzouki
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: caxixi
+                  name: Caxixi
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: folklore
+                  name: Folklore
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: guzheng
+                  name: Guzheng
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: jew's harp
+                  name: Jew's Harp
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: kalimba
+                  name: Kalimba
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: kanoon
+                  name: Kanoon
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: kazoo
+                  name: Kazoo
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: komungo
+                  name: Komungo
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: lyre
+                  name: Lyre
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: niko
+                  name: Niko
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: oud
+                  name: Oud
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: pad
+                  name: Pad
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: piri
+                  name: Piri
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: santur
+                  name: Santur
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: sanza
+                  name: Sanza
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: sitar
+                  name: Sitar
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: tambra
+                  name: Tambra
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: yangqin
+                  name: YangQin
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: fiddle
+                  name: Fiddle
+                  group:
+                    id: ethnic
+                    name: Ethnic
+                - id: biwa
+                  name: Biwa
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: gagaku
+                  name: Gagaku
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: hichiriki
+                  name: Hichiriki
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: komungo
+                  name: Komungo
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: koto
+                  name: Koto
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: ryuteki
+                  name: Ryuteki
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: san xian
+                  name: San Xian
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: shakuhachi
+                  name: Shakuhachi
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: shamisen
+                  name: Shamisen
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: shinobue
+                  name: Shinobue
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: shou
+                  name: Shou
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: tuzumi
+                  name: Tuzumi
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: wadaiko
+                  name: Wadaiko
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: kane
+                  name: Kane
+                  group:
+                    id: japanese
+                    name: Japanese
+                - id: bongo
+                  name: Bongo
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: cajon
+                  name: Cajon
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: carillon
+                  name: Carillon
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: cascara
+                  name: Cascara
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: chekere
+                  name: Chekere
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: claves
+                  name: Claves
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: conga
+                  name: Conga
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: cuica
+                  name: Cuica
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: djembe
+                  name: Djembe
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: drum loops
+                  name: Drum Loops
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: drums
+                  name: Drums
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: dulcimer
+                  name: Dulcimer
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: gamelan
+                  name: Gamelan
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: glockenspiel
+                  name: Glockenspiel
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: hand clap
+                  name: Hand Clap
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: log drums
+                  name: Log Drums
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: maracas
+                  name: Maracas
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: marimba
+                  name: Marimba
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: percussions
+                  name: Percussions
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: quena
+                  name: Quena
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: quinto
+                  name: Quinto
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: rainstick
+                  name: Rainstick
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: rhythm box
+                  name: Rhythm Box
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: shaker
+                  name: Shaker
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: snare drums
+                  name: Snare Drums
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: steel drums
+                  name: Steel Drums
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: tabla
+                  name: Tabla
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: tambura
+                  name: Tambura
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: timbales
+                  name: Timbales
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: tumba
+                  name: Tumba
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: vocoder
+                  name: Vocoder
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: vibraphone
+                  name: Vibraphone
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: woodblock
+                  name: Woodblock
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: xylophone
+                  name: Xylophone
+                  group:
+                    id: percussions
+                    name: Percussions
+                - id: bass
+                  name: Bass
+                  group:
+                    id: bass
+                    name: Bass
+                - id: acoustic bass
+                  name: Acoustic Bass
+                  group:
+                    id: bass
+                    name: Bass
+                - id: chopper bass
+                  name: Chopper Bass
+                  group:
+                    id: bass
+                    name: Bass
+                - id: electric bass
+                  name: Electric Bass
+                  group:
+                    id: bass
+                    name: Bass
+                - id: fretless bass
+                  name: Fretless Bass
+                  group:
+                    id: bass
+                    name: Bass
+                - id: synthesizer
+                  name: Synthesizer
+                  group:
+                    id: synthesizer
+                    name: Synthesizer
+                - id: synth strings
+                  name: Synth Strings
+                  group:
+                    id: synthesizer
+                    name: Synthesizer
+                - id: synth percussion
+                  name: Synth Percussion
+                  group:
+                    id: synthesizer
+                    name: Synthesizer
+                - id: synth pad
+                  name: Synth Pad
+                  group:
+                    id: synthesizer
+                    name: Synthesizer
+                - id: synth brass
+                  name: Synth Brass
+                  group:
+                    id: synthesizer
+                    name: Synthesizer
+                - id: synth bass
+                  name: Synth Bass
+                  group:
+                    id: synthesizer
+                    name: Synthesizer
+                - id: synth bell
+                  name: Synth Bell
+                  group:
+                    id: synthesizer
+                    name: Synthesizer
+                - id: synth voice
+                  name: Synth Voice
+                  group:
+                    id: synthesizer
+                    name: Synthesizer
+                - id: synth lead
+                  name: Synth Lead
+                  group:
+                    id: synthesizer
+                    name: Synthesizer
+                - id: a capella
+                  name: A capella
+                  group:
+                    id: vocal
+                    name: Vocal
+                - id: chorus
+                  name: Chorus
+                  group:
+                    id: vocal
+                    name: Vocal
+                - id: female voice
+                  name: Female Voice
+                  group:
+                    id: vocal
+                    name: Vocal
+                - id: male voice
+                  name: Male Voice
+                  group:
+                    id: vocal
+                    name: Vocal
+                - id: jazz scat
+                  name: Jazz Scat
+                  group:
+                    id: vocal
+                    name: Vocal
+                - id: opera
+                  name: Opera
+                  group:
+                    id: vocal
+                    name: Vocal
+                - id: scat
+                  name: Scat
+                  group:
+                    id: vocal
+                    name: Vocal
+                - id: vocal
+                  name: Vocal
+                  group:
+                    id: vocal
+                    name: Vocal
+                - id: voice
+                  name: Voice
+                  group:
+                    id: vocal
+                    name: Vocal
+                - id: voice percussion
+                  name: Voice Percussion
+                  group:
+                    id: vocal
+                    name: Vocal
+                - id: bell
+                  name: Bell
+                  group:
+                    id: bell
+                    name: Bell
+                - id: asian gong
+                  name: Asian Gong
+                  group:
+                    id: bell
+                    name: Bell
+                - id: cowbell
+                  name: Cowbell
+                  group:
+                    id: bell
+                    name: Bell
+                - id: jingle bell
+                  name: Jingle Bell
+                  group:
+                    id: bell
+                    name: Bell
+                - id: wind chime
+                  name: Wind Chime
+                  group:
+                    id: bell
+                    name: Bell
+                - id: music box
+                  name: Music Box
+                  group:
+                    id: others
+                    name: Others
+                - id: scratch
+                  name: Scratch
+                  group:
+                    id: others
+                    name: Others
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: mediaType
+        in: path
+        required: true
+        description: Media type code (e.g. video, music, sfx, photo).
+        schema:
+          type: string
+      - *id001
+      - *id002
+  /v2/media-types/{mediaType}/musical-keys:
+    get:
+      operationId: listMediaTypeMusicalKeys
+      summary: List music musical keys
+      tags:
+      - Media types
+      description: List music musical keys.
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                object: list
+                data:
+                - id: C
+                  name: C major
+                  group:
+                    id: major
+                - id: C#
+                  name: C#/Db major
+                  group:
+                    id: major
+                - id: D
+                  name: D major
+                  group:
+                    id: major
+                - id: D#
+                  name: D#/Eb major
+                  group:
+                    id: major
+                - id: E
+                  name: E major
+                  group:
+                    id: major
+                - id: F
+                  name: F major
+                  group:
+                    id: major
+                - id: F#
+                  name: F#/Gb major
+                  group:
+                    id: major
+                - id: G
+                  name: G major
+                  group:
+                    id: major
+                - id: G#
+                  name: Ab major
+                  group:
+                    id: major
+                - id: A
+                  name: A major
+                  group:
+                    id: major
+                - id: A#
+                  name: A#/Bb major
+                  group:
+                    id: major
+                - id: B
+                  name: B major
+                  group:
+                    id: major
+                - id: a
+                  name: a minor
+                  group:
+                    id: minor
+                - id: e
+                  name: e minor
+                  group:
+                    id: minor
+                - id: b
+                  name: b minor
+                  group:
+                    id: minor
+                - id: f#
+                  name: f# minor
+                  group:
+                    id: minor
+                - id: c#
+                  name: c# minor
+                  group:
+                    id: minor
+                - id: g#
+                  name: g# minor
+                  group:
+                    id: minor
+                - id: d#
+                  name: eb/d# minor
+                  group:
+                    id: minor
+                - id: bb
+                  name: bb minor
+                  group:
+                    id: minor
+                - id: f
+                  name: f minor
+                  group:
+                    id: minor
+                - id: c
+                  name: c minor
+                  group:
+                    id: minor
+                - id: g
+                  name: g minor
+                  group:
+                    id: minor
+                - id: d
+                  name: d minor
+                  group:
+                    id: minor
+        '401':
+          description: Authentication failed (missing or invalid API secret key).
+        '404':
+          description: Resource not found.
+      parameters:
+      - name: mediaType
+        in: path
+        required: true
+        description: Media type code (e.g. video, music, sfx, photo).
+        schema:
+          type: string
+      - *id001
+      - *id002
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication. Use your API secret key (created in the Developer Console)
+        as the username; leave the password empty.
