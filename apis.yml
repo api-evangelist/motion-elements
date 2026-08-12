@@ -103,6 +103,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/motion-elements-openapi-overlay.yaml
 - type: DomainSecurity
   url: security/motion-elements-domain-security.yml
 - type: AgenticAccess
