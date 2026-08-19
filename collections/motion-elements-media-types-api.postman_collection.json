@@ -1,0 +1,1463 @@
+{
+  "item": [
+    {
+      "id": "375af387-a4ef-496f-acab-079833b3476d",
+      "name": "Media types",
+      "description": {
+        "content": "Reference metadata: media types, categories, software versions, and music facets.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6e2f9656-9d02-4138-a209-a598b70ab06e",
+          "name": "List media types",
+          "request": {
+            "name": "List media types",
+            "description": {
+              "content": "List all supported media types and their sub-media-types.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "media-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f480e111-bade-454a-b88c-c492ff61ba9e",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"object\": \"media_type\",\n      \"id\": \"image\",\n      \"code\": \"image\",\n      \"name\": \"Image ・ GIF\",\n      \"name_plural\": \"Images ・ GIFs\",\n      \"name_seo\": \"Stock Image ・ Animated GIF\",\n      \"name_seo_plural\": \"Stock Image ・ Animated GIF\",\n      \"name_seo_free\": \"Free stock image\",\n      \"name_short\": \"Image\",\n      \"name_short_plural\": \"Image\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"image\",\n      \"sub_media_types\": [\n        \"photo\",\n        \"vector\",\n        \"gif\"\n      ]\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"video\",\n      \"code\": \"video\",\n      \"name\": \"Video\",\n      \"name_plural\": \"Videos\",\n      \"name_seo\": \"Stock video footage\",\n      \"name_seo_plural\": \"Stock video footage\",\n      \"name_seo_free\": \"Free stock footage\",\n      \"name_short\": \"Video\",\n      \"name_short_plural\": \"Video\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"video\",\n      \"sub_media_types\": [\n        \"animation\",\n        \"video_live\",\n        \"video_vr\"\n      ]\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"ae\",\n      \"code\": \"ae\",\n      \"name\": \"After Effects\",\n      \"name_plural\": \"After Effects\",\n      \"name_seo\": \"After Effects\",\n      \"name_seo_plural\": \"After Effects\",\n      \"name_seo_free\": \"Free After Effects templates\",\n      \"name_short\": \"AE\",\n      \"name_short_plural\": \"AE\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"ae\",\n      \"sub_media_types\": [\n        \"ae_template\",\n        \"ae_preset\"\n      ]\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"pr\",\n      \"code\": \"pr\",\n      \"name\": \"Premiere Pro\",\n      \"name_plural\": \"Premiere Pro\",\n      \"name_seo\": \"Premiere Pro\",\n      \"name_seo_plural\": \"Premiere Pro\",\n      \"name_seo_free\": \"Free Premiere Pro templates\",\n      \"name_short\": \"Premiere\",\n      \"name_short_plural\": \"Premiere\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"pr\",\n      \"sub_media_types\": [\n        \"pr_template\",\n        \"mg_template\",\n        \"pr_preset\"\n      ]\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"fcp\",\n      \"code\": \"fcp\",\n      \"name\": \"FCPX ・ Motion\",\n      \"name_plural\": \"FCPX ・ Motion\",\n      \"name_seo\": \"Apple Motion / FCPX Templates\",\n      \"name_seo_plural\": \"Apple Motion / FCPX Templates\",\n      \"name_seo_free\": \"Free FCPX Motion templates\",\n      \"name_short\": \"FCPX ・ Motion\",\n      \"name_short_plural\": \"FCPX ・ Motion\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"fcp\",\n      \"sub_media_types\": [\n        \"motion_template\"\n      ]\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"resolve\",\n      \"code\": \"resolve\",\n      \"name\": \"DaVinci Resolve\",\n      \"name_plural\": \"DaVinci Resolve\",\n      \"name_seo\": \"DaVinci Resolve\",\n      \"name_seo_plural\": \"DaVinci Resolve\",\n      \"name_seo_free\": \"Free Davinci Resolve Templates\",\n      \"name_short\": \"DaVinci Resolve\",\n      \"name_short_plural\": \"DaVinci Resolve\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"resolve\",\n      \"sub_media_types\": [\n        \"resolve_template\",\n        \"resolve_macro\"\n      ]\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"3d\",\n      \"code\": \"3d\",\n      \"name\": \"3D\",\n      \"name_plural\": \"3D\",\n      \"name_seo\": \"3D models\",\n      \"name_seo_plural\": \"3D models\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"3D\",\n      \"name_short_plural\": \"3D\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"3d\",\n      \"sub_media_types\": [\n        \"3d_model\"\n      ]\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"1\",\n      \"code\": \"photo\",\n      \"name\": \"Photo\",\n      \"name_plural\": \"Photos\",\n      \"name_seo\": \"Stock Photo\",\n      \"name_seo_plural\": \"Stock Photo\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"Photo\",\n      \"name_short_plural\": \"Photo\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"image\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"2\",\n      \"code\": \"vector\",\n      \"name\": \"Vector\",\n      \"name_plural\": \"Vectors\",\n      \"name_seo\": \"Stock Vector\",\n      \"name_seo_plural\": \"Stock Vector\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"Vector\",\n      \"name_short_plural\": \"Vector\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"image\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"3\",\n      \"code\": \"animation\",\n      \"name\": \"Animation\",\n      \"name_plural\": \"Animations\",\n      \"name_seo\": \"Stock Animation\",\n      \"name_seo_plural\": \"Stock Animation\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"Animation\",\n      \"name_short_plural\": \"Animation\",\n      \"video\": true,\n      \"audio\": false,\n      \"group\": \"video\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"4\",\n      \"code\": \"video_live\",\n      \"name\": \"Live Action\",\n      \"name_plural\": \"Live Action\",\n      \"name_seo\": \"Live Action\",\n      \"name_seo_plural\": \"Live Action\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"Live Action\",\n      \"name_short_plural\": \"Live Action\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"video\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"5\",\n      \"code\": \"3d_model\",\n      \"name\": \"3D Model\",\n      \"name_plural\": \"3D Models\",\n      \"name_seo\": \"3D models\",\n      \"name_seo_plural\": \"3D models\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"3D\",\n      \"name_short_plural\": \"3D\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"3d\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"6\",\n      \"code\": \"music\",\n      \"name\": \"Music\",\n      \"name_plural\": \"Music\",\n      \"name_seo\": \"Background music for video\",\n      \"name_seo_plural\": \"Background music for video\",\n      \"name_seo_free\": \"Free background music\",\n      \"name_short\": \"Music\",\n      \"name_short_plural\": \"Music\",\n      \"video\": false,\n      \"audio\": true,\n      \"group\": \"music\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"7\",\n      \"code\": \"sfx\",\n      \"name\": \"Sound Effects\",\n      \"name_plural\": \"Sound Effects\",\n      \"name_seo\": \"Sound Effects for Video\",\n      \"name_seo_plural\": \"Sound Effects for Video\",\n      \"name_seo_free\": \"Free sound effects\",\n      \"name_short\": \"SFX\",\n      \"name_short_plural\": \"SFX\",\n      \"video\": false,\n      \"audio\": true,\n      \"group\": \"sfx\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"8\",\n      \"code\": \"ae_template\",\n      \"name\": \"After Effects Template\",\n      \"name_plural\": \"After Effects Templates\",\n      \"name_seo\": \"After Effects templates\",\n      \"name_seo_plural\": \"After Effects templates\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"AE\",\n      \"name_short_plural\": \"AE\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"ae\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"9\",\n      \"code\": \"motion_template\",\n      \"name\": \"Apple Motion Template\",\n      \"name_plural\": \"Apple Motion Templates\",\n      \"name_seo\": \"Apple Motion templates\",\n      \"name_seo_plural\": \"Apple Motion templates\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"Apple Motion\",\n      \"name_short_plural\": \"Apple Motion\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"fcp\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"11\",\n      \"code\": \"photo_vr\",\n      \"name\": \"VR 360° Photo\",\n      \"name_plural\": \"VR 360° Photos\",\n      \"name_seo\": \"360° Photo\",\n      \"name_seo_plural\": \"360° Photo\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"360° Photo\",\n      \"name_short_plural\": \"360° Photo\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"image\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"12\",\n      \"code\": \"video_vr\",\n      \"name\": \"VR 360° Video\",\n      \"name_plural\": \"VR 360° Videos\",\n      \"name_seo\": \"360° Video\",\n      \"name_seo_plural\": \"360° Video\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"360° Video\",\n      \"name_short_plural\": \"360° Video\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"video\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"14\",\n      \"code\": \"gif\",\n      \"name\": \"GIF\",\n      \"name_plural\": \"GIFs\",\n      \"name_seo\": \"GIF\",\n      \"name_seo_plural\": \"GIF\",\n      \"name_seo_free\": \"Free GIFs for commercial use\",\n      \"name_short\": \"GIF\",\n      \"name_short_plural\": \"GIF\",\n      \"video\": true,\n      \"audio\": false,\n      \"group\": \"image\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"15\",\n      \"code\": \"pr_template\",\n      \"name\": \"Premiere Pro Template\",\n      \"name_plural\": \"Premiere Pro Templates\",\n      \"name_seo\": \"Premiere Pro Template\",\n      \"name_seo_plural\": \"Premiere Pro Template\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"Premiere\",\n      \"name_short_plural\": \"Premiere\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"pr\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"16\",\n      \"code\": \"mg_template\",\n      \"name\": \"Motion Graphics Template\",\n      \"name_plural\": \"Motion Graphics Templates\",\n      \"name_seo\": \"Motion Graphics Template\",\n      \"name_seo_plural\": \"Motion Graphics Template\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"Motion Graphics\",\n      \"name_short_plural\": \"Motion Graphics\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"pr\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"19\",\n      \"code\": \"ae_preset\",\n      \"name\": \"After Effects Animation Preset\",\n      \"name_plural\": \"After Effects Presets\",\n      \"name_seo\": \"After Effects Animation Preset\",\n      \"name_seo_plural\": \"After Effects Animation Preset\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"AE Preset\",\n      \"name_short_plural\": \"AE Preset\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"ae\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"20\",\n      \"code\": \"pr_preset\",\n      \"name\": \"Premiere Pro Effect Preset\",\n      \"name_plural\": \"Premiere Pro Presets\",\n      \"name_seo\": \"Premiere Pro Effect Preset\",\n      \"name_seo_plural\": \"Premiere Pro Effect Preset\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"Premiere Preset\",\n      \"name_short_plural\": \"Premiere Preset\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"pr\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"21\",\n      \"code\": \"lottie\",\n      \"name\": \"Lottie\",\n      \"name_plural\": \"Lottie\",\n      \"name_seo\": \"Lottie Animation\",\n      \"name_seo_plural\": \"Lottie Animation\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"Lottie\",\n      \"name_short_plural\": \"Lottie\",\n      \"video\": true,\n      \"audio\": false,\n      \"group\": \"lottie\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"22\",\n      \"code\": \"resolve_template\",\n      \"name\": \"DaVinci Resolve Template\",\n      \"name_plural\": \"DaVinci Resolve Templates\",\n      \"name_seo\": \"DaVinci Resolve Template\",\n      \"name_seo_plural\": \"DaVinci Resolve Template\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"DaVinci Resolve Template\",\n      \"name_short_plural\": \"DaVinci Resolve Templates\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"resolve\",\n      \"sub_media_types\": []\n    },\n    {\n      \"object\": \"media_type\",\n      \"id\": \"23\",\n      \"code\": \"resolve_macro\",\n      \"name\": \"DaVinci Resolve Macro\",\n      \"name_plural\": \"DaVinci Resolve Macro\",\n      \"name_seo\": \"DaVinci Resolve Macro\",\n      \"name_seo_plural\": \"DaVinci Resolve Macro\",\n      \"name_seo_free\": \"\",\n      \"name_short\": \"DaVinci Resolve Macro\",\n      \"name_short_plural\": \"DaVinci Resolve Macro\",\n      \"video\": false,\n      \"audio\": false,\n      \"group\": \"resolve\",\n      \"sub_media_types\": []\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5de33466-95fe-47da-8e86-0d4de3559222",
+              "name": "Authentication failed (missing or invalid API secret key).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6bb1a0a-7b86-4f7a-b3c8-2f17d10685f5",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "403a7ab9-89bc-49f5-bffb-1fd5a1301c65",
+          "name": "List media type categories",
+          "request": {
+            "name": "List media type categories",
+            "description": {
+              "content": "List media type categories.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "media-types",
+                ":mediaType",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Category type filter (e.g. style)."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mediaType",
+                  "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "489631a9-728d-4e04-b5b2-66f75f4fc9ad",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_count\": 3,\n  \"data\": [\n    {\n      \"object\": \"category\",\n      \"id\": \"396\",\n      \"name\": \"Vintage\",\n      \"type\": \"style\"\n    },\n    {\n      \"object\": \"category\",\n      \"id\": \"70\",\n      \"name\": \"Slow Motion\",\n      \"type\": \"style\"\n    },\n    {\n      \"object\": \"category\",\n      \"id\": \"69\",\n      \"name\": \"Timelapse\",\n      \"type\": \"style\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "290b49a0-e84d-404c-b39a-5bc18842521a",
+              "name": "Authentication failed (missing or invalid API secret key).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8870433a-c22d-46fe-852c-7b7620d19180",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af01b176-7c33-4a12-aaf6-7d388c75f37f",
+          "name": "List media type software versions",
+          "request": {
+            "name": "List media type software versions",
+            "description": {
+              "content": "List media type software versions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "media-types",
+                ":mediaType",
+                "software-versions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mediaType",
+                  "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f0db6236-a518-48c2-91ea-1e108631917f",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "software-versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"ae\",\n      \"object\": \"software\",\n      \"name\": \"Adobe After Effects\",\n      \"versions\": [\n        {\n          \"version\": \"6.0\",\n          \"display_version\": \"6\"\n        },\n        {\n          \"version\": \"6.5\",\n          \"display_version\": \"6.5\"\n        },\n        {\n          \"version\": \"7.0\",\n          \"display_version\": \"7\"\n        },\n        {\n          \"version\": \"8.0\",\n          \"display_version\": \"CS3\"\n        },\n        {\n          \"version\": \"9.0\",\n          \"display_version\": \"CS4\"\n        },\n        {\n          \"version\": \"10.0\",\n          \"display_version\": \"CS5\"\n        },\n        {\n          \"version\": \"10.5\",\n          \"display_version\": \"CS5.5\"\n        },\n        {\n          \"version\": \"11.0\",\n          \"display_version\": \"CS6\"\n        },\n        {\n          \"version\": \"12.0\",\n          \"display_version\": \"CC\"\n        },\n        {\n          \"version\": \"13.0\",\n          \"display_version\": \"CC 2014\"\n        },\n        {\n          \"version\": \"13.5\",\n          \"display_version\": \"CC 2015\"\n        },\n        {\n          \"version\": \"13.8\",\n          \"display_version\": \"CC 2015.3\"\n        },\n        {\n          \"version\": \"14.0\",\n          \"display_version\": \"CC 2017\"\n        },\n        {\n          \"version\": \"15.0\",\n          \"display_version\": \"CC 2018\"\n        },\n        {\n          \"version\": \"15.1\",\n          \"display_version\": \"CC 2018.1\"\n        },\n        {\n          \"version\": \"16.0\",\n          \"display_version\": \"CC 2019\"\n        },\n        {\n          \"version\": \"16.1\",\n          \"display_version\": \"CC 2019.1\"\n        },\n        {\n          \"version\": \"17.0\",\n          \"display_version\": \"CC 2020\"\n        }\n      ],\n      \"backward_compatible\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "950ef094-270c-48e5-9a5a-89a6fe9ba900",
+              "name": "Authentication failed (missing or invalid API secret key).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "software-versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4a00d8d7-64b9-436a-9175-689dc3de37db",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "software-versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2852b926-5e90-4753-8d0a-378d50930466",
+          "name": "List music edit types",
+          "request": {
+            "name": "List music edit types",
+            "description": {
+              "content": "List music edit types.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "media-types",
+                ":mediaType",
+                "edit-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mediaType",
+                  "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0da45ee5-60d6-4fb0-8f6d-46c082d93cca",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "edit-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"full\",\n      \"name\": \"Full Track\"\n    },\n    {\n      \"id\": \"instrumental\",\n      \"name\": \"Instrumental\"\n    },\n    {\n      \"id\": \"stinger\",\n      \"name\": \"Stinger\"\n    },\n    {\n      \"id\": \"bumper\",\n      \"name\": \"Bumper\"\n    },\n    {\n      \"id\": \"narrative\",\n      \"name\": \"Narrative\"\n    },\n    {\n      \"id\": \"underscore\",\n      \"name\": \"Underscore\"\n    },\n    {\n      \"id\": \"nodrum\",\n      \"name\": \"No Drums\"\n    },\n    {\n      \"id\": \"vocal\",\n      \"name\": \"Vocal only\"\n    },\n    {\n      \"id\": \"drum\",\n      \"name\": \"Drums only\"\n    },\n    {\n      \"id\": \"bass\",\n      \"name\": \"Bass only\"\n    },\n    {\n      \"id\": \"guitar\",\n      \"name\": \"Guitars only\"\n    },\n    {\n      \"id\": \"bed\",\n      \"name\": \"Bed\"\n    },\n    {\n      \"id\": \"loop\",\n      \"name\": \"Loop\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "795d05e9-df0a-424f-af5b-54ad09fbe9c5",
+              "name": "Authentication failed (missing or invalid API secret key).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "edit-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "91621cfa-d806-4207-ba8f-da88030a3775",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "edit-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f407769-e93d-4c13-a921-974373141d40",
+          "name": "List music instruments",
+          "request": {
+            "name": "List music instruments",
+            "description": {
+              "content": "List music instruments.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "media-types",
+                ":mediaType",
+                "instruments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mediaType",
+                  "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0880c349-51c4-41ba-a741-abca24e2e482",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"guitar\",\n      \"name\": \"Guitar\",\n      \"group\": {\n        \"id\": \"guitar\",\n        \"name\": \"Guitar\"\n      }\n    },\n    {\n      \"id\": \"acoustic guitar\",\n      \"name\": \"Acoustic Guitar\",\n      \"group\": {\n        \"id\": \"guitar\",\n        \"name\": \"Guitar\"\n      }\n    },\n    {\n      \"id\": \"banjo\",\n      \"name\": \"Banjo\",\n      \"group\": {\n        \"id\": \"guitar\",\n        \"name\": \"Guitar\"\n      }\n    },\n    {\n      \"id\": \"electric guitar\",\n      \"name\": \"Electric Guitar\",\n      \"group\": {\n        \"id\": \"guitar\",\n        \"name\": \"Guitar\"\n      }\n    },\n    {\n      \"id\": \"gut guitar\",\n      \"name\": \"Gut Guitar\",\n      \"group\": {\n        \"id\": \"guitar\",\n        \"name\": \"Guitar\"\n      }\n    },\n    {\n      \"id\": \"jazz guitar\",\n      \"name\": \"Jazz Guitar\",\n      \"group\": {\n        \"id\": \"guitar\",\n        \"name\": \"Guitar\"\n      }\n    },\n    {\n      \"id\": \"mandolin\",\n      \"name\": \"Mandolin\",\n      \"group\": {\n        \"id\": \"guitar\",\n        \"name\": \"Guitar\"\n      }\n    },\n    {\n      \"id\": \"mute guitar\",\n      \"name\": \"Mute Guitar\",\n      \"group\": {\n        \"id\": \"guitar\",\n        \"name\": \"Guitar\"\n      }\n    },\n    {\n      \"id\": \"steel guitar\",\n      \"name\": \"Steel Guitar\",\n      \"group\": {\n        \"id\": \"guitar\",\n        \"name\": \"Guitar\"\n      }\n    },\n    {\n      \"id\": \"ukulele\",\n      \"name\": \"Ukulele\",\n      \"group\": {\n        \"id\": \"guitar\",\n        \"name\": \"Guitar\"\n      }\n    },\n    {\n      \"id\": \"accordion\",\n      \"name\": \"Accordion\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"piano\",\n      \"name\": \"Piano\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"acoustic piano\",\n      \"name\": \"Acoustic Piano\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"bandoneon\",\n      \"name\": \"Bandoneon\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"celesta\",\n      \"name\": \"Celesta\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"clavinet\",\n      \"name\": \"Clavinet\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"electric piano\",\n      \"name\": \"Electric Piano\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"harpsichord\",\n      \"name\": \"Harpsichord\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"honky-tonk piano\",\n      \"name\": \"Honky-Tonk Piano\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"melotron\",\n      \"name\": \"Melotron\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"organ\",\n      \"name\": \"Organ\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"pipe organ\",\n      \"name\": \"Pipe Organ\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"reed organ\",\n      \"name\": \"Reed Organ\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"steet organ\",\n      \"name\": \"Steet Organ\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"thumb piano\",\n      \"name\": \"Thumb Piano\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"toy piano\",\n      \"name\": \"Toy Piano\",\n      \"group\": {\n        \"id\": \"keyboards\",\n        \"name\": \"Keyboards\"\n      }\n    },\n    {\n      \"id\": \"bassoon\",\n      \"name\": \"Bassoon\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"blues harp\",\n      \"name\": \"Blues Harp\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"bottle blow\",\n      \"name\": \"Bottle Blow\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"clarinet\",\n      \"name\": \"Clarinet\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"cornet\",\n      \"name\": \"Cornet\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"english horn\",\n      \"name\": \"English Horn\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"flugel horn\",\n      \"name\": \"Flugel Horn\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"flute\",\n      \"name\": \"Flute\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"french horn\",\n      \"name\": \"French Horn\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"harmonica\",\n      \"name\": \"Harmonica\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"horn\",\n      \"name\": \"Horn\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"melodica\",\n      \"name\": \"Melodica\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"oboe\",\n      \"name\": \"Oboe\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"ocarina\",\n      \"name\": \"Ocarina\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"pan flute\",\n      \"name\": \"Pan Flute\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"piccolo\",\n      \"name\": \"Piccolo\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"pipe\",\n      \"name\": \"Pipe\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"recorder\",\n      \"name\": \"Recorder\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"sax\",\n      \"name\": \"Sax\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"swiss horn\",\n      \"name\": \"Swiss Horn\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"alto saxophone\",\n      \"name\": \"Alto Saxophone\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"soprano saxophone\",\n      \"name\": \"Soprano Saxophone\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"tenor saxophone\",\n      \"name\": \"Tenor Saxophone\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"trumpet\",\n      \"name\": \"Trumpet\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"mute trumpet\",\n      \"name\": \"Mute Trumpet\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"trombone\",\n      \"name\": \"Trombone\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"whistle\",\n      \"name\": \"Whistle\",\n      \"group\": {\n        \"id\": \"wind_instruments\",\n        \"name\": \"Wind Instruments\"\n      }\n    },\n    {\n      \"id\": \"orchestra\",\n      \"name\": \"Orchestra\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"orchestra hit\",\n      \"name\": \"Orchestra Hit\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"cello\",\n      \"name\": \"Cello\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"harp\",\n      \"name\": \"Harp\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"pizzicato\",\n      \"name\": \"Pizzicato\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"strings\",\n      \"name\": \"Strings\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"timpani\",\n      \"name\": \"Timpani\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"tuba\",\n      \"name\": \"Tuba\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"viola\",\n      \"name\": \"Viola\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"violin\",\n      \"name\": \"Violin\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"vibraphone\",\n      \"name\": \"Vibraphone\",\n      \"group\": {\n        \"id\": \"orchestra\",\n        \"name\": \"Orchestra\"\n      }\n    },\n    {\n      \"id\": \"bagpipe\",\n      \"name\": \"Bagpipe\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"berimbau\",\n      \"name\": \"Berimbau\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"bouzouki\",\n      \"name\": \"Bouzouki\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"caxixi\",\n      \"name\": \"Caxixi\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"folklore\",\n      \"name\": \"Folklore\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"guzheng\",\n      \"name\": \"Guzheng\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"jew's harp\",\n      \"name\": \"Jew's Harp\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"kalimba\",\n      \"name\": \"Kalimba\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"kanoon\",\n      \"name\": \"Kanoon\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"kazoo\",\n      \"name\": \"Kazoo\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"komungo\",\n      \"name\": \"Komungo\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"lyre\",\n      \"name\": \"Lyre\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"niko\",\n      \"name\": \"Niko\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"oud\",\n      \"name\": \"Oud\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"pad\",\n      \"name\": \"Pad\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"piri\",\n      \"name\": \"Piri\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"santur\",\n      \"name\": \"Santur\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"sanza\",\n      \"name\": \"Sanza\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"sitar\",\n      \"name\": \"Sitar\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"tambra\",\n      \"name\": \"Tambra\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"yangqin\",\n      \"name\": \"YangQin\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"fiddle\",\n      \"name\": \"Fiddle\",\n      \"group\": {\n        \"id\": \"ethnic\",\n        \"name\": \"Ethnic\"\n      }\n    },\n    {\n      \"id\": \"biwa\",\n      \"name\": \"Biwa\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"gagaku\",\n      \"name\": \"Gagaku\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"hichiriki\",\n      \"name\": \"Hichiriki\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"komungo\",\n      \"name\": \"Komungo\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"koto\",\n      \"name\": \"Koto\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"ryuteki\",\n      \"name\": \"Ryuteki\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"san xian\",\n      \"name\": \"San Xian\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"shakuhachi\",\n      \"name\": \"Shakuhachi\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"shamisen\",\n      \"name\": \"Shamisen\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"shinobue\",\n      \"name\": \"Shinobue\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"shou\",\n      \"name\": \"Shou\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"tuzumi\",\n      \"name\": \"Tuzumi\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"wadaiko\",\n      \"name\": \"Wadaiko\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"kane\",\n      \"name\": \"Kane\",\n      \"group\": {\n        \"id\": \"japanese\",\n        \"name\": \"Japanese\"\n      }\n    },\n    {\n      \"id\": \"bongo\",\n      \"name\": \"Bongo\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"cajon\",\n      \"name\": \"Cajon\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"carillon\",\n      \"name\": \"Carillon\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"cascara\",\n      \"name\": \"Cascara\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"chekere\",\n      \"name\": \"Chekere\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"claves\",\n      \"name\": \"Claves\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"conga\",\n      \"name\": \"Conga\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"cuica\",\n      \"name\": \"Cuica\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"djembe\",\n      \"name\": \"Djembe\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"drum loops\",\n      \"name\": \"Drum Loops\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"drums\",\n      \"name\": \"Drums\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"dulcimer\",\n      \"name\": \"Dulcimer\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"gamelan\",\n      \"name\": \"Gamelan\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"glockenspiel\",\n      \"name\": \"Glockenspiel\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"hand clap\",\n      \"name\": \"Hand Clap\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"log drums\",\n      \"name\": \"Log Drums\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"maracas\",\n      \"name\": \"Maracas\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"marimba\",\n      \"name\": \"Marimba\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"percussions\",\n      \"name\": \"Percussions\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"quena\",\n      \"name\": \"Quena\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"quinto\",\n      \"name\": \"Quinto\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"rainstick\",\n      \"name\": \"Rainstick\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"rhythm box\",\n      \"name\": \"Rhythm Box\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"shaker\",\n      \"name\": \"Shaker\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"snare drums\",\n      \"name\": \"Snare Drums\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"steel drums\",\n      \"name\": \"Steel Drums\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"tabla\",\n      \"name\": \"Tabla\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"tambura\",\n      \"name\": \"Tambura\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"timbales\",\n      \"name\": \"Timbales\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"tumba\",\n      \"name\": \"Tumba\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"vocoder\",\n      \"name\": \"Vocoder\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"vibraphone\",\n      \"name\": \"Vibraphone\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"woodblock\",\n      \"name\": \"Woodblock\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"xylophone\",\n      \"name\": \"Xylophone\",\n      \"group\": {\n        \"id\": \"percussions\",\n        \"name\": \"Percussions\"\n      }\n    },\n    {\n      \"id\": \"bass\",\n      \"name\": \"Bass\",\n      \"group\": {\n        \"id\": \"bass\",\n        \"name\": \"Bass\"\n      }\n    },\n    {\n      \"id\": \"acoustic bass\",\n      \"name\": \"Acoustic Bass\",\n      \"group\": {\n        \"id\": \"bass\",\n        \"name\": \"Bass\"\n      }\n    },\n    {\n      \"id\": \"chopper bass\",\n      \"name\": \"Chopper Bass\",\n      \"group\": {\n        \"id\": \"bass\",\n        \"name\": \"Bass\"\n      }\n    },\n    {\n      \"id\": \"electric bass\",\n      \"name\": \"Electric Bass\",\n      \"group\": {\n        \"id\": \"bass\",\n        \"name\": \"Bass\"\n      }\n    },\n    {\n      \"id\": \"fretless bass\",\n      \"name\": \"Fretless Bass\",\n      \"group\": {\n        \"id\": \"bass\",\n        \"name\": \"Bass\"\n      }\n    },\n    {\n      \"id\": \"synthesizer\",\n      \"name\": \"Synthesizer\",\n      \"group\": {\n        \"id\": \"synthesizer\",\n        \"name\": \"Synthesizer\"\n      }\n    },\n    {\n      \"id\": \"synth strings\",\n      \"name\": \"Synth Strings\",\n      \"group\": {\n        \"id\": \"synthesizer\",\n        \"name\": \"Synthesizer\"\n      }\n    },\n    {\n      \"id\": \"synth percussion\",\n      \"name\": \"Synth Percussion\",\n      \"group\": {\n        \"id\": \"synthesizer\",\n        \"name\": \"Synthesizer\"\n      }\n    },\n    {\n      \"id\": \"synth pad\",\n      \"name\": \"Synth Pad\",\n      \"group\": {\n        \"id\": \"synthesizer\",\n        \"name\": \"Synthesizer\"\n      }\n    },\n    {\n      \"id\": \"synth brass\",\n      \"name\": \"Synth Brass\",\n      \"group\": {\n        \"id\": \"synthesizer\",\n        \"name\": \"Synthesizer\"\n      }\n    },\n    {\n      \"id\": \"synth bass\",\n      \"name\": \"Synth Bass\",\n      \"group\": {\n        \"id\": \"synthesizer\",\n        \"name\": \"Synthesizer\"\n      }\n    },\n    {\n      \"id\": \"synth bell\",\n      \"name\": \"Synth Bell\",\n      \"group\": {\n        \"id\": \"synthesizer\",\n        \"name\": \"Synthesizer\"\n      }\n    },\n    {\n      \"id\": \"synth voice\",\n      \"name\": \"Synth Voice\",\n      \"group\": {\n        \"id\": \"synthesizer\",\n        \"name\": \"Synthesizer\"\n      }\n    },\n    {\n      \"id\": \"synth lead\",\n      \"name\": \"Synth Lead\",\n      \"group\": {\n        \"id\": \"synthesizer\",\n        \"name\": \"Synthesizer\"\n      }\n    },\n    {\n      \"id\": \"a capella\",\n      \"name\": \"A capella\",\n      \"group\": {\n        \"id\": \"vocal\",\n        \"name\": \"Vocal\"\n      }\n    },\n    {\n      \"id\": \"chorus\",\n      \"name\": \"Chorus\",\n      \"group\": {\n        \"id\": \"vocal\",\n        \"name\": \"Vocal\"\n      }\n    },\n    {\n      \"id\": \"female voice\",\n      \"name\": \"Female Voice\",\n      \"group\": {\n        \"id\": \"vocal\",\n        \"name\": \"Vocal\"\n      }\n    },\n    {\n      \"id\": \"male voice\",\n      \"name\": \"Male Voice\",\n      \"group\": {\n        \"id\": \"vocal\",\n        \"name\": \"Vocal\"\n      }\n    },\n    {\n      \"id\": \"jazz scat\",\n      \"name\": \"Jazz Scat\",\n      \"group\": {\n        \"id\": \"vocal\",\n        \"name\": \"Vocal\"\n      }\n    },\n    {\n      \"id\": \"opera\",\n      \"name\": \"Opera\",\n      \"group\": {\n        \"id\": \"vocal\",\n        \"name\": \"Vocal\"\n      }\n    },\n    {\n      \"id\": \"scat\",\n      \"name\": \"Scat\",\n      \"group\": {\n        \"id\": \"vocal\",\n        \"name\": \"Vocal\"\n      }\n    },\n    {\n      \"id\": \"vocal\",\n      \"name\": \"Vocal\",\n      \"group\": {\n        \"id\": \"vocal\",\n        \"name\": \"Vocal\"\n      }\n    },\n    {\n      \"id\": \"voice\",\n      \"name\": \"Voice\",\n      \"group\": {\n        \"id\": \"vocal\",\n        \"name\": \"Vocal\"\n      }\n    },\n    {\n      \"id\": \"voice percussion\",\n      \"name\": \"Voice Percussion\",\n      \"group\": {\n        \"id\": \"vocal\",\n        \"name\": \"Vocal\"\n      }\n    },\n    {\n      \"id\": \"bell\",\n      \"name\": \"Bell\",\n      \"group\": {\n        \"id\": \"bell\",\n        \"name\": \"Bell\"\n      }\n    },\n    {\n      \"id\": \"asian gong\",\n      \"name\": \"Asian Gong\",\n      \"group\": {\n        \"id\": \"bell\",\n        \"name\": \"Bell\"\n      }\n    },\n    {\n      \"id\": \"cowbell\",\n      \"name\": \"Cowbell\",\n      \"group\": {\n        \"id\": \"bell\",\n        \"name\": \"Bell\"\n      }\n    },\n    {\n      \"id\": \"jingle bell\",\n      \"name\": \"Jingle Bell\",\n      \"group\": {\n        \"id\": \"bell\",\n        \"name\": \"Bell\"\n      }\n    },\n    {\n      \"id\": \"wind chime\",\n      \"name\": \"Wind Chime\",\n      \"group\": {\n        \"id\": \"bell\",\n        \"name\": \"Bell\"\n      }\n    },\n    {\n      \"id\": \"music box\",\n      \"name\": \"Music Box\",\n      \"group\": {\n        \"id\": \"others\",\n        \"name\": \"Others\"\n      }\n    },\n    {\n      \"id\": \"scratch\",\n      \"name\": \"Scratch\",\n      \"group\": {\n        \"id\": \"others\",\n        \"name\": \"Others\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "05f94535-a706-4ea3-8ef0-662820d09f61",
+              "name": "Authentication failed (missing or invalid API secret key).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "04e3aabf-7b21-4946-bb19-1882b6f78753",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "instruments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d59ffef-5945-4e95-a108-48b024ce604f",
+          "name": "List music musical keys",
+          "request": {
+            "name": "List music musical keys",
+            "description": {
+              "content": "List music musical keys.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "media-types",
+                ":mediaType",
+                "musical-keys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mediaType",
+                  "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2900ca2-81d0-4a6f-afcd-d2543551fea0",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "musical-keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"C\",\n      \"name\": \"C major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"C#\",\n      \"name\": \"C#/Db major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"D\",\n      \"name\": \"D major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"D#\",\n      \"name\": \"D#/Eb major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"E\",\n      \"name\": \"E major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"F\",\n      \"name\": \"F major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"F#\",\n      \"name\": \"F#/Gb major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"G\",\n      \"name\": \"G major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"G#\",\n      \"name\": \"Ab major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"A\",\n      \"name\": \"A major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"A#\",\n      \"name\": \"A#/Bb major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"B\",\n      \"name\": \"B major\",\n      \"group\": {\n        \"id\": \"major\"\n      }\n    },\n    {\n      \"id\": \"a\",\n      \"name\": \"a minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"e\",\n      \"name\": \"e minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"b\",\n      \"name\": \"b minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"f#\",\n      \"name\": \"f# minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"c#\",\n      \"name\": \"c# minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"g#\",\n      \"name\": \"g# minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"d#\",\n      \"name\": \"eb/d# minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"bb\",\n      \"name\": \"bb minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"f\",\n      \"name\": \"f minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"c\",\n      \"name\": \"c minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"g\",\n      \"name\": \"g minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    },\n    {\n      \"id\": \"d\",\n      \"name\": \"d minor\",\n      \"group\": {\n        \"id\": \"minor\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b911ac48-943d-46dd-a167-bc70f7177a85",
+              "name": "Authentication failed (missing or invalid API secret key).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "musical-keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0c3a2a11-ced1-427d-9ff3-f028d53153b9",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "media-types",
+                    ":mediaType",
+                    "musical-keys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mediaType",
+                      "description": "(Required) Media type code (e.g. video, music, sfx, photo)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.motionelements.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6683f70d-6129-4719-a05c-fc26a6373afd",
+    "name": "MotionElements Marketplace Account Media types API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "MotionElements Marketplace API v2 lets you search, retrieve, license and download from the MotionElements library of 26M+ royalty-free stock video, music, sound effects, motion/editing templates (After Effects, Premiere Pro, Final Cut/Motion, DaVinci Resolve, .mogrt), photos, vectors, GIFs and Lottie animations. Authentication is HTTP Basic using your API secret key as the username (no password). All requests are over HTTPS. Harvested from the provider's published Postman collection (Marketplace API v2).\n\nContact Support:\n Name: MotionElements Support\n Email: support@motionelements.com",
+      "type": "text/plain"
+    }
+  }
+}

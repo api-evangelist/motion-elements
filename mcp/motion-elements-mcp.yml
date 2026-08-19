@@ -71,3 +71,9 @@ tools:
 - name: list_media_type_musical_keys
   description: List music musical keys
   source_operation: openapi/motion-elements-openapi.yml#listMediaTypeMusicalKeys
+deployment:
+  mode: none
+  verified: derived
+  tools: 21
+  checked: '2026-08-12'
+  source: catalog MCP census

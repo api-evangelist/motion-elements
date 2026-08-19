@@ -1,0 +1,979 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MotionElements Marketplace Account Search API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search videos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/video",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "subscription",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by subscription."
+              },
+              {
+                "name": "price_range",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by price range."
+              },
+              {
+                "name": "resolution",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by resolution."
+              },
+              {
+                "name": "model_release",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by model release."
+              },
+              {
+                "name": "property_release",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by property release."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "color",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by color."
+              },
+              {
+                "name": "license",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by license."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search videos in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search music",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/music",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "subscription",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by subscription."
+              },
+              {
+                "name": "price_range",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by price range."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "license",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by license."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search music in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search sound effects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/sfx",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "subscription",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by subscription."
+              },
+              {
+                "name": "price_range",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by price range."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search sound effects in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search After Effects templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/ae_template",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "subscription",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by subscription."
+              },
+              {
+                "name": "price_range",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by price range."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "tutorial",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by tutorial."
+              },
+              {
+                "name": "plugin",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by plugin."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search After Effects templates in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search Final Cut Pro / Apple Motion templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/motion_template",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "subscription",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by subscription."
+              },
+              {
+                "name": "price_range",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by price range."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "tutorial",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by tutorial."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search Final Cut Pro / Apple Motion templates in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search Premiere Pro templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/pr_template",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "subscription",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by subscription."
+              },
+              {
+                "name": "price_range",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by price range."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "tutorial",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by tutorial."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search Premiere Pro templates in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search Motion Graphics (.mogrt) templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/mg_template",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "subscription",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by subscription."
+              },
+              {
+                "name": "price_range",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by price range."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "tutorial",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by tutorial."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search Motion Graphics (.mogrt) templates in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search DaVinci Resolve templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/resolve_template",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "subscription",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by subscription."
+              },
+              {
+                "name": "price_range",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by price range."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "tutorial",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by tutorial."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search DaVinci Resolve templates in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/photo",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "color",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by color."
+              },
+              {
+                "name": "model_release",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by model release."
+              },
+              {
+                "name": "property_release",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by property release."
+              },
+              {
+                "name": "license",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by license."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search photos in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search vectors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/vector",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "color",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by color."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search vectors in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search GIFs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/gif",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "color",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by color."
+              },
+              {
+                "name": "model_release",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by model release."
+              },
+              {
+                "name": "property_release",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by property release."
+              },
+              {
+                "name": "license",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by license."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search GIFs in the MotionElements marketplace. Returns a paginated list of elements."
+        },
+        {
+          "info": {
+            "name": "Search Lottie animations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/search/lottie",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search keyword / query string."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort expression, e.g. `credits,-created_at` (prefix `-` for descending)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (default 1)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Results per page (default 100)."
+              },
+              {
+                "name": "artist",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by artist."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by category."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Search Lottie animations in the MotionElements marketplace. Returns a paginated list of elements."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

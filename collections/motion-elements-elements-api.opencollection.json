@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MotionElements Marketplace Account Elements API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Elements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get element",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/elements/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Element (asset) id."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Retrieve a single marketplace element (asset) by its id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

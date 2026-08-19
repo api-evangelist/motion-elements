@@ -1,0 +1,211 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MotionElements Marketplace Account Media types API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Media types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List media types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/media-types",
+            "params": [
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "List all supported media types and their sub-media-types."
+        },
+        {
+          "info": {
+            "name": "List media type categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/media-types/:mediaType/categories",
+            "params": [
+              {
+                "name": "mediaType",
+                "value": "",
+                "type": "path",
+                "description": "Media type code (e.g. video, music, sfx, photo)."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Category type filter (e.g. style)."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "List media type categories."
+        },
+        {
+          "info": {
+            "name": "List media type software versions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/media-types/:mediaType/software-versions",
+            "params": [
+              {
+                "name": "mediaType",
+                "value": "",
+                "type": "path",
+                "description": "Media type code (e.g. video, music, sfx, photo)."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "List media type software versions."
+        },
+        {
+          "info": {
+            "name": "List music edit types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/media-types/:mediaType/edit-types",
+            "params": [
+              {
+                "name": "mediaType",
+                "value": "",
+                "type": "path",
+                "description": "Media type code (e.g. video, music, sfx, photo)."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "List music edit types."
+        },
+        {
+          "info": {
+            "name": "List music instruments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/media-types/:mediaType/instruments",
+            "params": [
+              {
+                "name": "mediaType",
+                "value": "",
+                "type": "path",
+                "description": "Media type code (e.g. video, music, sfx, photo)."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "List music instruments."
+        },
+        {
+          "info": {
+            "name": "List music musical keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/media-types/:mediaType/musical-keys",
+            "params": [
+              {
+                "name": "mediaType",
+                "value": "",
+                "type": "path",
+                "description": "Media type code (e.g. video, music, sfx, photo)."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "List music musical keys."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

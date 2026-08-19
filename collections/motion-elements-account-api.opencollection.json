@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "MotionElements Marketplace Account API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get account details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.motionelements.com/v2/account",
+            "params": [
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "ISO 639-1 language code (lowercase) for returned data: en, ja, ko, zh-hant."
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "ISO 4217 currency code (uppercase) for pricing: USD, EUR, JPY, KRW, TWD."
+              }
+            ]
+          },
+          "docs": "Retrieve the authenticated account's details (subscription, credits, currency)."
+        },
+        {
+          "info": {
+            "name": "Update account details",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.motionelements.com/v2/account"
+          },
+          "docs": "Update mutable settings on the authenticated account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
