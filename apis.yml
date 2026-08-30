@@ -87,7 +87,7 @@ apis:
   humanURL: https://www.motionelements.com/developer
   baseURL: https://api.motionelements.com/v2
   tags:
-  - Media Types
+  - Media types
   tags_raw:
   - Media types
   properties:
