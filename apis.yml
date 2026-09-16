@@ -40,7 +40,7 @@ accessModel:
   method: derived
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-09-16'
 tags:
 - Media
 - Stock Media
@@ -69,7 +69,7 @@ apis:
   - type: APIReference
     url: https://api-docs.motionelements.com/
 - aid: motion-elements:motion-elements-elements-api
-  name: Motion Elements Elements API
+  name: Motion Elements API
   description: Retrieve individual marketplace elements.
   humanURL: https://www.motionelements.com/developer
   baseURL: https://api.motionelements.com/v2
@@ -136,7 +136,10 @@ common:
   url: lifecycle/motion-elements-lifecycle.yml
 - type: X-MCPServerCandidate
   url: mcp/motion-elements-mcp.yml
-  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate
+    — a tool list derived from the published API contracts, not an existing server. The scorer already
+    read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type
+    surfaces with a server that does not exist.'
 - type: LLMsTxt
   url: llms/motion-elements-llms.txt
 - type: DataModel
