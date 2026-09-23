@@ -1,8 +1,8 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: MotionElements Marketplace Account Media types API
+  title: MotionElements Marketplace Media types API
   version: 2.0.0
-  description: MotionElements Marketplace API v2 lets you search, retrieve, license and download from the MotionElements library of 26M+ royalty-free stock video, music, sound effects, motion/editing templates (After Effects, Premiere Pro, Final Cut/Motion, DaVinci Resolve, .mogrt), photos, vectors, GIFs and Lottie animations. Authentication is HTTP Basic using your API secret key as the username (no password). All requests are over HTTPS. Harvested from the provider's published Postman collection (Marketplace API v2).
+  description: MotionElements Marketplace API v2 lets you search, retrieve, license and download from the MotionElements library of 26M+ royalty-free stock video, music, sound effects, motion/editing templates (After Effects, Premiere Pro, Final Cut/Motion, DaVinci Resolve, .mogrt), photos, vectors, GIFs and Lottie animations.
   contact:
     name: MotionElements Support
     email: support@motionelements.com

@@ -1,10 +1,7 @@
 {
   "provider": "motion-elements",
   "sources": [
-    "motion-elements-account-api-openapi.yml",
-    "motion-elements-elements-api-openapi.yml",
-    "motion-elements-media-types-api-openapi.yml",
-    "motion-elements-search-api-openapi.yml"
+    "_original/motion-elements-openapi.yml"
   ],
   "outputs": [
     "motion-elements-account-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "motion-elements-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "motion-elements-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "motion-elements-elements-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "motion-elements-media-types-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "motion-elements-search-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
