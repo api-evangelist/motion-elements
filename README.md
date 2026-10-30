@@ -64,6 +64,126 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Motion Elements is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+MotionElements is a global creative-asset marketplace and AI production platform offering an unlimited-download subscription catalog of 26M+ royalty-free assets: stock video, music, sound effects, motion and editing templates (After Effects, Premiere Pro, Final Cut / Apple Motion, DaVinci Resolve, .mogrt), photos, vectors, GIFs and Lottie animations, plus Studio AI generative tools. Its Marketplace API v2 lets platforms search, retrieve, license and download from the catalog using HTTP Basic authentication (API secret key as username) over HTTPS.
 
-Backed by: 500-global — https://motionelements.com
+**Areas:** Media · Stock Media · Video · Music · Sound Effects · Templates · Marketplace · Creative Assets · Generative AI · Search · Company
+
+## Motion Elements on APIs.io
+
+Everything profiled for Motion Elements is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/motion-elements/](https://apis.io/providers/motion-elements/)** — or go straight to one of the APIs or properties below.
+
+### APIs (4)
+
+- [Motion Elements Account API](https://apis.io/apis/motion-elements/motion-elements-account-api/) — Authenticated account details.
+- [Motion Elements API](https://apis.io/apis/motion-elements/motion-elements-elements-api/) — Retrieve individual marketplace elements.
+- [Motion Elements Media types API](https://apis.io/apis/motion-elements/motion-elements-media-types-api/) — Reference metadata: media types, categories, software versions, and music facets.
+- [Motion Elements Search API](https://apis.io/apis/motion-elements/motion-elements-search-api/) — Search the marketplace across media types.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [motion-elements](https://apis.io/servers/motion-elements/motion-elements/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Motion Elements Agentic Access](https://apis.io/agentic-access/motion-elements/motion-elements-agentic-access/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [MotionElements Marketplace Account API](https://apis.io/collections/motion-elements/open-motion-elements-account-api/)
+- [MotionElements Marketplace Account Elements API](https://apis.io/collections/motion-elements/open-motion-elements-elements-api/)
+- [MotionElements Marketplace Account Media types API](https://apis.io/collections/motion-elements/open-motion-elements-media-types-api/)
+- [MotionElements Marketplace Account Search API](https://apis.io/collections/motion-elements/open-motion-elements-search-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Motion Elements Openapi Overlay](https://apis.io/overlays/motion-elements/motion-elements-openapi-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Motion Elements Authentication](https://apis.io/security/motion-elements/motion-elements-authentication/)
+- [Motion Elements Domain Security](https://apis.io/security/motion-elements/motion-elements-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://motionelements.com)
+- [Documentation](https://api-docs.motionelements.com/)
+- [Getting started](https://www.motionelements.com/developer)
+- [API reference](https://api-docs.motionelements.com/)
+- [Pricing](https://www.motionelements.com/pricing)
+- [Sign up](https://www.motionelements.com/signup)
+- [Support](https://help.motionelements.com/)
+- [Blog](https://www.motionelements.com/blog)
+- [Terms of service](https://www.motionelements.com/legal/terms)
+- [Privacy policy](https://www.motionelements.com/legal/privacy)
+- [GitHub](https://github.com/motionelements)
+
+## API Evangelist rating
+
+**Kin Score 41.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 50.9 |
+| Contract governance | 4.5 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 55.4 |
+| Access clarity | 44.7 |
+
+**Agent readiness 22.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 22.7** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/motion-elements/](https://apis.io/providers/motion-elements/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Motion Elements: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/motion-elements/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
